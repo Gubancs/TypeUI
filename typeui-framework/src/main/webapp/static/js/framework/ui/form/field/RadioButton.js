@@ -10,7 +10,7 @@ var __extends = this.__extends || function (d, b) {
 var RadioButton = (function (_super) {
     __extends(RadioButton, _super);
     function RadioButton(form) {
-        _super.call(this, form, 4 /* RADIO */);
+        _super.call(this, form, InputType.RADIO);
     }
     return RadioButton;
 })(InputField);

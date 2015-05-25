@@ -63,11 +63,33 @@
 					</execution>
 				</executions>
 				<configuration>
-					<targetGroups>framework.min</targetGroups>
+					<targetGroups>typeui.min</targetGroups>
 					<destinationFolder>${web.resources}</destinationFolder>
 					<cssDestinationFolder>${web.resources}/minified/css</cssDestinationFolder>
 					<jsDestinationFolder>${web.resources}/minified/js</jsDestinationFolder>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<overwrite>true</overwrite>
+							<outputDirectory>${basedir}/minified/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/webapp/static/minified/</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

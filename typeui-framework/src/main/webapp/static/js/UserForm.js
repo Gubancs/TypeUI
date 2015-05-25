@@ -18,8 +18,8 @@ var UserForm = (function (_super) {
     function UserForm(parent) {
         _super.call(this, parent);
         this.setLabelWidth(200);
-        this.setLabelAlign(LabelAlign.RIGHT);
-        this.setHttpMethod(HttpMethod.GET);
+        this.setLabelAlign(1 /* RIGHT */);
+        this.setHttpMethod(0 /* GET */);
         this.setAction("");
         this.setValidateOnBlur(true);
     }
@@ -67,11 +67,11 @@ var UserForm = (function (_super) {
     UserForm.prototype.initButtons = function (buttonBar) {
         //OK button
         this.okButton = new Button(buttonBar);
-        this.okButton.setButtonType(ButtonType.BUTTON);
+        this.okButton.setButtonType(1 /* BUTTON */);
         this.okButton.setText("Submit");
         this.okButton.addClass("custom-ok-button");
         this.okButton.setIconClass("fa fa-check");
-        this.okButton.setIconAlign(IconAlign.LEFT);
+        this.okButton.setIconAlign(0 /* LEFT */);
         //Cancel button
         this.cancelButton = new Button(buttonBar);
         this.cancelButton.setText("Cancel");

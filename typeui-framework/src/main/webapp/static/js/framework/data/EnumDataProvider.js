@@ -21,6 +21,9 @@ var EnumDataProvider = (function () {
     EnumDataProvider.prototype.forEach = function (callbackfn, thisArg) {
         this.dataProvider.forEach(callbackfn);
     };
+    EnumDataProvider.prototype.isEmpty = function () {
+        return this.dataProvider.isEmpty();
+    };
     return EnumDataProvider;
 })();
 //# sourceMappingURL=EnumDataProvider.js.map

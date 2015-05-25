@@ -10,7 +10,7 @@ var __extends = this.__extends || function (d, b) {
 var Checkbox = (function (_super) {
     __extends(Checkbox, _super);
     function Checkbox(form) {
-        _super.call(this, form, 3 /* CHECKBOX */, true);
+        _super.call(this, form, InputType.CHECKBOX, true);
         this.addClass(Checkbox.DEFAULT_CLASS);
         this.getContainer().addClass(Checkbox.DEFAULT_WRAPPER_CLASS);
     }

@@ -24,7 +24,7 @@ var Button = (function (_super) {
         this.addClass("ui-button");
         this.getContainer().setClass("ui-button-wrapper");
         this.icon = new Icon(this);
-        this.text = new DisplayText(this, 0 /* SPAN */);
+        this.text = new DisplayText(this, TextType.SPAN);
         this.text.addClass("ui-button-text");
     }
     Button.prototype.render = function () {

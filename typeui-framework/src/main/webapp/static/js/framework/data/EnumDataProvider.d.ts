@@ -9,4 +9,5 @@ declare class EnumDataProvider implements DataProvider {
     constructor(object: Object);
     getValue<T>(data: T): string;
     forEach<T>(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+    isEmpty(): boolean;
 }
