@@ -1,10 +1,16 @@
 # typeui
 This repository contains a TypeScript frontend framework for web applications based on HTML5.
 
+<h3>Examples</h3>
+<a href="http://typeui.elasticbeanstalk.com/:">http://typeui.elasticbeanstalk.com/</a>
+
+
+<h3>Screenshot</h3>
 <img src="https://github.com/Gubancs/TypeUI/blob/master/typeui-framework/src/main/webapp/screenshots/user_registration_form.png" width="500"></img>
 
 
-<h3>Features</h3>
+
+<h4>Features</h4>
 <ul>
 <li>Obejct oriented UI programming</li>
 <li>Support bidirectional data binding between UI component and data model</li>
@@ -14,7 +20,7 @@ This repository contains a TypeScript frontend framework for web applications ba
 <li>Customizable</li>
 </ul>
 
-<h5>What's New in version 0.1.0</h5>
+<h4>What's New in version 0.1.0</h4>
 <ul>
   <li>I created the first implementation of the Component hierachy with rendering</li>
   <li>I created the base UI form components, TextField, Textarea, DateField, Checkbox etc.</li>
