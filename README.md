@@ -25,4 +25,4 @@ This repository contains a TypeScript frontend framework for web applications ba
   <li>Created StateProvider and StateManager for stateful components</li>
   <li>Added common utilities and base classes like HashMap, DOMHelper, Device and so on.</li>
   <li>Created build flow via maven 3</li>
-<li>
+</ul>
