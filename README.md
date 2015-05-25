@@ -8,6 +8,20 @@ This repository contains a TypeScript frontend framework for web applications ba
 <h3>Screenshot</h3>
 <img src="https://github.com/Gubancs/TypeUI/blob/master/typeui-framework/src/main/webapp/screenshots/user_registration_form.png" width="500"></img>
 
+```javascript
+     /**
+     * Start application
+     * 
+     * @param {Container} bodyContainer
+     */
+    onApplicationStart(bodyContainer: Container): void {
+        var panel = new Panel(bodyContainer);
+        panel.setIconClass("fa fa-user");
+        panel.setTitle("User registration");
+
+        var userForm = new UserForm(panel.getBody());
+    }
+```
 
 
 <h4>Features</h4>
