@@ -1,0 +1,29 @@
+@import "../common.less";
+@import "../mixins.less";
+
+
+.ui-panel{
+	border: 1px @borderColor solid;
+	border-radius: @borderRadius;
+}
+
+.ui-panel-header {
+	.gradient(rgb(244, 244, 244), #fff);
+	padding: @padding;
+	border-bottom: 1px @borderColor solid;
+}
+
+.ui-panel-title {
+	color: @fontColor;
+	font-size: 20px;
+	font-weight: 100;
+	border-bottom: 1px rgb(239, 239, 239) solid;
+	padding: 8px;
+	text-shadow: @textShadow;
+}
+
+
+.ui-panel-body {
+	padding: @padding;
+}
+

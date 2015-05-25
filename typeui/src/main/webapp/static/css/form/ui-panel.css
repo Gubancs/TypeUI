@@ -1,0 +1,26 @@
+.ui-panel {
+  border: 1px #dfdfdf solid;
+  border-radius: 3px;
+}
+.ui-panel-header {
+  background-color: #f4f4f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ffffff));
+  background: -webkit-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -moz-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -ms-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -o-linear-gradient(top, #f4f4f4, #ffffff);
+  padding: 8px;
+  border-bottom: 1px #dfdfdf solid;
+}
+.ui-panel-title {
+  color: #666666;
+  font-size: 20px;
+  font-weight: 100;
+  border-bottom: 1px #efefef solid;
+  padding: 8px;
+  text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
+}
+.ui-panel-body {
+  padding: 8px;
+}
+

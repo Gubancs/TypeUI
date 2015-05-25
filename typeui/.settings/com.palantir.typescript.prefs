@@ -1,0 +1,5 @@
+build.path.exportedFolder=src/main/webapp/static/exported
+build.path.sourceFolder=src/main/webapp/static/ts
+compiler.outputDirOption=src/main/webapp/static/js
+compiler.outputFileOption=
+eclipse.preferences.version=1

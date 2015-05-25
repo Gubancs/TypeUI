@@ -1,0 +1,15 @@
+.ui-checkbox-wrapper {
+  display: inline-block;
+}
+.ui-checkbox {
+  padding: 0px;
+  cursor: pointer;
+}
+.ui-checkbox-label {
+  padding: 8px;
+  font-size: 14px;
+}
+.ui-checkbox-label:hover {
+  cursor: pointer;
+}
+

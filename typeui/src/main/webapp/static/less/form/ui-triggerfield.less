@@ -1,0 +1,36 @@
+
+@import "../common.less";
+@import "../mixins.less";
+@import "ui-textfield.less";
+
+.ui-triggerfield-wrapper {
+	display: inline-block;
+	position: relative;
+	
+}
+
+.ui-triggerfield {
+	&:extend(.ui-textfield all);
+}
+
+.ui-trigger-button-wrapper {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 40px;
+	height: 100%;
+	display: block;
+	background-color: #F2F2F2;
+	border: 1px @borderColor solid;
+	.box-sizing (border-box);
+	border-radius: 0px @borderRadius @borderRadius 0px;
+	
+	.ui-trigger-button {
+		width: 100%;
+		height: 100%;
+		padding: 0px;
+		cursor: pointer;
+	}
+	
+}
+

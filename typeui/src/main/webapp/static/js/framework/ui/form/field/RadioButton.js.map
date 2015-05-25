@@ -1,0 +1,1 @@
+{"version":3,"file":"RadioButton.js","sourceRoot":"","sources":["../../../../../ts/framework/ui/form/field/RadioButton.ts"],"names":["RadioButton","RadioButton.constructor"],"mappings":";;;;;;AAKA,AAHA;;GAEG;IACG,WAAW;IAASA,UAApBA,WAAWA,UAAmBA;IAEhCA,SAFEA,WAAWA,CAEDA,IAAUA;QAClBC,kBAAMA,IAAIA,EAAEA,aAAeA,CAACA,CAACA;IACjCA,CAACA;IACLD,kBAACA;AAADA,CAACA,AALD,EAA0B,UAAU,EAKnC"}

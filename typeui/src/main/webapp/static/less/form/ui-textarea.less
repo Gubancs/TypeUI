@@ -1,0 +1,15 @@
+
+
+@import "../common.less";
+@import "../mixins.less";
+@import "ui-textfield.less";
+
+//UI textfield
+.ui-textarea {
+	 &:extend(.ui-textfield all);
+}
+
+.ui-label ~ .ui-textarea {
+	vertical-align:top;
+}
+

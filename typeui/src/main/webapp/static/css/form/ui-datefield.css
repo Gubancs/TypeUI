@@ -1,0 +1,59 @@
+.ui-textfield,
+.ui-triggerfield,
+.ui-datefield {
+  font-family: "Optima";
+  font-size: 14px;
+  padding: 8px;
+  background-color: #fafafa;
+  border: 1px #dfdfdf solid;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0px 3px 0px rgba(200, 200, 200, 0.2);
+  text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
+  min-width: 200px;
+}
+.ui-textfield:focus,
+.ui-triggerfield:focus,
+.ui-datefield:focus {
+  transition: background 0.25s ease-in-out;
+  background: #f9ffff;
+  border-color: #c9dbdb;
+  box-shadow: 0px 3px 0px rgba(201, 219, 219, 0.5);
+}
+.ui-textfield:hover,
+.ui-triggerfield:hover,
+.ui-datefield:hover {
+  transition: background 0.25s ease-in-out;
+  background: rgba(249, 255, 255, 0.46);
+  border-color: #c9dbdb;
+  box-shadow: 0px 3px 0px rgba(201, 219, 219, 0.5);
+}
+.ui-triggerfield-wrapper,
+.ui-datefield-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.ui-trigger-button-wrapper {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  height: 100%;
+  display: block;
+  background-color: #F2F2F2;
+  border: 1px #dfdfdf solid;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0px 3px 3px 0px;
+}
+.ui-trigger-button-wrapper .ui-trigger-button {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  cursor: pointer;
+}
+.ui-datefield {
+  cursor: pointer;
+}
+

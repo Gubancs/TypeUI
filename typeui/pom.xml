@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>typeuie</artifactId>
+	<packaging>war</packaging>
+	<name>typeui</name>
+
+
+	<build>
+		<finalName>typeui</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warName>typeui</warName>
+				</configuration>
+			</plugin>
+
+			<!-- Less compiler plugin -->
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>1.7.0.1.1</version>
+				<configuration>
+					<encoding>${encoding}</encoding>
+					<sourceDirectory>${web.resources}/less</sourceDirectory>
+					<outputDirectory>${web.resources}/css</outputDirectory>
+					<excludes>
+						<exclude>mixins.less</exclude>
+						<exclude>common.less</exclude>
+						<exclude>form/ui-triggerfield.less</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>ro.isdc.wro4j</groupId>
+				<artifactId>wro4j-maven-plugin</artifactId>
+				<version>1.4.5</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<targetGroups>framework.min</targetGroups>
+					<destinationFolder>${web.resources}</destinationFolder>
+					<cssDestinationFolder>${web.resources}/minified/css</cssDestinationFolder>
+					<jsDestinationFolder>${web.resources}/minified/js</jsDestinationFolder>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<web.resources>${project.basedir}/src/main/webapp/static</web.resources>
+	</properties>
+	<groupId>org.topclouders</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+	<description>TypeScript frontend framework based on html5</description>
+	<organization>
+		<name>Touplcouders</name>
+	</organization>
+</project>

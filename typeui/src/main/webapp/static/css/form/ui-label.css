@@ -1,0 +1,9 @@
+.ui-label {
+  display: inline-block;
+  padding: 4px 8px;
+  text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
+}
+.label-align-right .ui-label {
+  text-align: right;
+}
+
