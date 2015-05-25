@@ -23,11 +23,9 @@ class StateManager {
     /**
      * Save state
      * 
-     * @param {string} key A uniuqe key for this state
-     * @param {Object} state The state that should be save
      */
-    saveState(key: string, stateful: Stateful) {
-        this.stateProvider.saveState(key, stateful.getState());
+    saveState(stateful: Stateful) {
+        this.stateProvider.saveState(stateful.stateId, stateful.getState());
     } 
     
     

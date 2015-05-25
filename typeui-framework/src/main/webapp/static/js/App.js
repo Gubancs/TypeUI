@@ -63,6 +63,7 @@ var Application = (function () {
         userGrid.setDataProvider(dataProvider);
         bodyContainer.render();
         Log.info("Application started successfully");
+        userGrid.hide();
     };
     /**
      *

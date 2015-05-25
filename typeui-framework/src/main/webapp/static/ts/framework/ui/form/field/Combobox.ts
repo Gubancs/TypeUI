@@ -21,6 +21,7 @@ class Combobox extends TriggerField {
         this.setClass(Combobox.DEFAULT_CLASS);
         this.getContainer().setClass(Combobox.DEFAULT_WRAPPER_CLASS);
 
+        this.setTriggerIconClass("fa fa-angle-down");
     }
 
     render() {

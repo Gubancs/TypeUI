@@ -18,11 +18,9 @@ var StateManager = (function () {
     /**
      * Save state
      *
-     * @param {string} key A uniuqe key for this state
-     * @param {Object} state The state that should be save
      */
-    StateManager.prototype.saveState = function (key, stateful) {
-        this.stateProvider.saveState(key, stateful.getState());
+    StateManager.prototype.saveState = function (stateful) {
+        this.stateProvider.saveState(stateful.stateId, stateful.getState());
     };
     /**
      * Set state provider

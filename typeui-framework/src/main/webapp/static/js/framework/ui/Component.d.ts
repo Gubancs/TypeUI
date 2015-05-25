@@ -110,6 +110,15 @@ declare class Component extends Observable {
      */
     setVisible(visible: boolean): void;
     isVisible(): boolean;
+    /**
+     *
+     * Show  the component
+     */
+    show(): void;
+    /**
+     * Hide the component
+     */
+    hide(): void;
     setWidth(width: number): void;
     getWidth(): number;
     setId(id: string): void;

@@ -104,11 +104,11 @@ class Component extends Observable {
         this.id = Sequence.next();
     }
 
-    
-    setParent(parent:Container){
+
+    setParent(parent: Container) {
         var c = this.useWrapperContainer ? this.getContainer() : this;
         this.getContainer().remove(c);
-       
+
         this.parent = parent;
         this.parent.add(c);
     }
@@ -125,7 +125,7 @@ class Component extends Observable {
 
     protected doRender(htmlElement: HTMLElement) {
         this.beforeRender();
-        
+
         this.htmlElement = htmlElement;
         this.initEventListeners();
         if (this.parent) {
@@ -135,8 +135,8 @@ class Component extends Observable {
             this.afterRender();
         }
     }
-    
-    protected beforeRender(){
+
+    protected beforeRender() {
     }
 
     protected afterRender() {
@@ -265,6 +265,21 @@ class Component extends Observable {
 
     isVisible(): boolean {
         return this.visible;
+    }
+    
+    /**
+     * 
+     * Show  the component
+     */
+    show() {
+        this.setVisible(true);
+    }
+    
+    /**
+     * Hide the component
+     */
+    hide() {
+        this.setVisible(false);
     }
 
     setWidth(width: number) {

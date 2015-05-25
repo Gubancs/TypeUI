@@ -14,10 +14,8 @@ declare class StateManager {
     /**
      * Save state
      *
-     * @param {string} key A uniuqe key for this state
-     * @param {Object} state The state that should be save
      */
-    saveState(key: string, stateful: Stateful): void;
+    saveState(stateful: Stateful): void;
     /**
      * Set state provider
      *

@@ -14,6 +14,7 @@ var Combobox = (function (_super) {
         this.options = new List();
         this.setClass(Combobox.DEFAULT_CLASS);
         this.getContainer().setClass(Combobox.DEFAULT_WRAPPER_CLASS);
+        this.setTriggerIconClass("fa fa-angle-down");
     }
     Combobox.prototype.render = function () {
         var _this = this;

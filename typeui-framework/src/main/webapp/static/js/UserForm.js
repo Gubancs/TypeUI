@@ -18,8 +18,8 @@ var UserForm = (function (_super) {
     function UserForm(parent) {
         _super.call(this, parent);
         this.setLabelWidth(200);
-        this.setLabelAlign(1 /* RIGHT */);
-        this.setHttpMethod(0 /* GET */);
+        this.setLabelAlign(LabelAlign.RIGHT);
+        this.setHttpMethod(HttpMethod.GET);
         this.setAction("");
         this.setValidateOnBlur(true);
     }
@@ -28,25 +28,23 @@ var UserForm = (function (_super) {
         //First name field
         this.firstNameField = new TextField(this);
         this.firstNameField.setName("firstName");
-        this.firstNameField.setDisabled(false);
-        this.firstNameField.setPlaceholder("Type your firstname");
+        this.firstNameField.setPlaceholder("Type your first name");
         this.firstNameField.setFieldLabel("First name");
         //last name field
         this.lastNameField = new TextField(this);
         this.lastNameField.setName("lastName");
-        this.lastNameField.setDisabled(false);
-        this.lastNameField.setPlaceholder("Type your lastname");
+        this.lastNameField.setPlaceholder("Type your last name");
         this.lastNameField.setFieldLabel("Last name");
         //last name field
         this.dateField = new DateField(this);
         this.dateField.setName("birthDate");
-        this.dateField.setDisabled(false);
         this.dateField.setPlaceholder("Select your birth date");
         this.dateField.setFieldLabel("Birth date");
         //Gender field
-        var genderField = new Combobox(this);
-        genderField.setDataProvider(new EnumDataProvider(Gender));
-        genderField.setFieldLabel("Gender");
+        //        var genderField = new Combobox(this);
+        //        genderField.setDataProvider(new EnumDataProvider(Gender));
+        //        genderField.setFieldLabel("Gender");
+        //        
         //Are you sure?
         this.checkbox = new Checkbox(this);
         this.checkbox.setText("Yes");
@@ -59,19 +57,19 @@ var UserForm = (function (_super) {
         this.emailField.setPlaceholder("Type your email");
         //Describe yourself
         var textArea = new TextArea(this);
-        textArea.setPlaceholder("Type your email");
-        textArea.setDisabled(false);
+        textArea.setName("yourself");
+        textArea.setPlaceholder("What do you think?");
         textArea.setFieldLabel("Describe yourself");
         _super.prototype.createComponents.call(this);
     };
     UserForm.prototype.initButtons = function (buttonBar) {
         //OK button
         this.okButton = new Button(buttonBar);
-        this.okButton.setButtonType(1 /* BUTTON */);
+        this.okButton.setButtonType(ButtonType.BUTTON);
         this.okButton.setText("Submit");
         this.okButton.addClass("custom-ok-button");
         this.okButton.setIconClass("fa fa-check");
-        this.okButton.setIconAlign(0 /* LEFT */);
+        this.okButton.setIconAlign(IconAlign.LEFT);
         //Cancel button
         this.cancelButton = new Button(buttonBar);
         this.cancelButton.setText("Cancel");

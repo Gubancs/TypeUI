@@ -1,6 +1,8 @@
 
 
 interface LabelProvider {
-    getLabel(data: any): string;
+    getLabel<T>(data: T): string;
+
+    getIconClass ? <T>(data: T): string;
 }
 

@@ -174,6 +174,19 @@ var Component = (function (_super) {
     Component.prototype.isVisible = function () {
         return this.visible;
     };
+    /**
+     *
+     * Show  the component
+     */
+    Component.prototype.show = function () {
+        this.setVisible(true);
+    };
+    /**
+     * Hide the component
+     */
+    Component.prototype.hide = function () {
+        this.setVisible(false);
+    };
     Component.prototype.setWidth = function (width) {
         if (this.isRendered()) {
             CssHelper.setWidth(this.getElement(), width);

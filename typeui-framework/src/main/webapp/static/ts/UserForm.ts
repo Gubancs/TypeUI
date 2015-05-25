@@ -35,16 +35,14 @@ class UserForm extends Form {
         //First name field
         this.firstNameField = new TextField(this);
         this.firstNameField.setName("firstName");
-        this.firstNameField.setDisabled(false);
-        this.firstNameField.setPlaceholder("Type your firstname");
+        this.firstNameField.setPlaceholder("Type your first name");
         this.firstNameField.setFieldLabel("First name");
 
         
         //last name field
         this.lastNameField = new TextField(this);
         this.lastNameField.setName("lastName");
-        this.lastNameField.setDisabled(false);
-        this.lastNameField.setPlaceholder("Type your lastname");
+        this.lastNameField.setPlaceholder("Type your last name");
         this.lastNameField.setFieldLabel("Last name");
        
         
@@ -52,16 +50,15 @@ class UserForm extends Form {
         //last name field
         this.dateField = new DateField(this);
         this.dateField.setName("birthDate");
-        this.dateField.setDisabled(false);
         this.dateField.setPlaceholder("Select your birth date");
         this.dateField.setFieldLabel("Birth date");
        
           
         //Gender field
-        var genderField = new Combobox(this);
-        genderField.setDataProvider(new EnumDataProvider(Gender));
-        genderField.setFieldLabel("Gender");
-        
+//        var genderField = new Combobox(this);
+//        genderField.setDataProvider(new EnumDataProvider(Gender));
+//        genderField.setFieldLabel("Gender");
+//        
         //Are you sure?
         this.checkbox = new Checkbox(this);
         this.checkbox.setText("Yes");
@@ -77,14 +74,14 @@ class UserForm extends Form {
          
         //Describe yourself
         var textArea = new TextArea(this);
-        textArea.setPlaceholder("Type your email");
-        textArea.setDisabled(false);
+        textArea.setName("yourself");
+        textArea.setPlaceholder("What do you think?");
         textArea.setFieldLabel("Describe yourself");
 
         super.createComponents();
     }
 
-    initButtons(buttonBar: ButtonBar) {
+    protected initButtons(buttonBar: ButtonBar) {
         
         //OK button
         this.okButton = new Button(buttonBar);
@@ -132,14 +129,14 @@ class UserForm extends Form {
      * 
      * @param {MouseEvent} e
      */
-    onButtonClickHandler(e: MouseEvent) {
+    private onButtonClickHandler(e: MouseEvent) {
         Log.info("On click the button", this);
     }
 
 
-    firstNameChangeHandler(e: Event) {
+    private firstNameChangeHandler(e: Event) {
         Log.info("First name changed", e);
     }
 
-  
+
 }

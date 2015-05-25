@@ -62,8 +62,10 @@ class Application {
         var dataProvider = new UserDataProvider(this.getDummyUsers());
         userGrid.setDataProvider(dataProvider);
         bodyContainer.render();
-
+        
         Log.info("Application started successfully");
+        
+        userGrid.hide();
     }
 
     /**

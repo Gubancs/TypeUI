@@ -16,7 +16,7 @@ declare class UserForm extends Form {
     private dateField;
     constructor(parent: Container);
     protected createComponents(): void;
-    initButtons(buttonBar: ButtonBar): void;
+    protected initButtons(buttonBar: ButtonBar): void;
     /**
      * Initialize custom event listeners
      */
@@ -26,6 +26,6 @@ declare class UserForm extends Form {
      *
      * @param {MouseEvent} e
      */
-    onButtonClickHandler(e: MouseEvent): void;
-    firstNameChangeHandler(e: Event): void;
+    private onButtonClickHandler(e);
+    private firstNameChangeHandler(e);
 }
