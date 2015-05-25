@@ -52,6 +52,7 @@
 		<js>/static/js/framework/ui/form/field/TextField.js</js>
 		<js>/static/js/framework/ui/form/field/EmailField.js</js>
 		<js>/static/js/framework/ui/form/field/Checkbox.js</js>
+		<js>/static/js/framework/ui/form/field/RadioButton.js</js>
 		<js>/static/js/framework/ui/form/field/TextArea.js</js>
 		<js>/static/js/framework/ui/form/field/TriggerField.js</js>
 		<js>/static/js/framework/ui/form/field/Combobox.js</js>

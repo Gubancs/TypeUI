@@ -10,8 +10,12 @@ var __extends = this.__extends || function (d, b) {
 var RadioButton = (function (_super) {
     __extends(RadioButton, _super);
     function RadioButton(form) {
-        _super.call(this, form, InputType.RADIO);
+        _super.call(this, form);
+        this.setType(InputType.RADIO);
     }
+    RadioButton.DEFAULT_CLASS = "ui-radio";
+    RadioButton.DEFAULT_WRAPPER_CLASS = "ui-radio-wrapper";
+    RadioButton.DEFAULT_LABEL_CLASS = "ui-radio-label";
     return RadioButton;
-})(InputField);
+})(Checkbox);
 //# sourceMappingURL=RadioButton.js.map

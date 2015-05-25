@@ -24,5 +24,8 @@ declare class Container extends Component {
      * Get children of this container
      */
     getChildren(): List<Component>;
+    /**
+     * Destroy container with all children component
+     */
     destroy(): void;
 }

@@ -64,6 +64,10 @@ class InputField extends Field {
         return this.name;
     }
 
+    protected setType(inputType: InputType) {
+        this.type = inputType;
+    }
+
     getType(): InputType {
         return this.type;
     }

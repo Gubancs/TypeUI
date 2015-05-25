@@ -44,4 +44,11 @@ class Field extends Component {
     setFieldLabel(fieldLabel: string) {
         this.fieldLabel.setText(fieldLabel);
     }
+    
+    
+    destroy(){
+        this.fieldWrapper.destroy();
+        
+        super.destroy();
+    }
 }

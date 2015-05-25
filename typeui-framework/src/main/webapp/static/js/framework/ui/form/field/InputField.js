@@ -53,6 +53,9 @@ var InputField = (function (_super) {
     InputField.prototype.getName = function () {
         return this.name;
     };
+    InputField.prototype.setType = function (inputType) {
+        this.type = inputType;
+    };
     InputField.prototype.getType = function () {
         return this.type;
     };

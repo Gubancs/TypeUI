@@ -34,6 +34,7 @@ declare class InputField extends Field {
     getValue(): string;
     setName(name: string): void;
     getName(): string;
+    protected setType(inputType: InputType): void;
     getType(): InputType;
     setPlaceholder(placeholder: string): void;
     getPlaceholder(): string;

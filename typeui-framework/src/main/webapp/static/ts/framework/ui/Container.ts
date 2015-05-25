@@ -60,7 +60,10 @@ class Container extends Component {
     getChildren(): List<Component> {
         return this.children;
     }
-
+    
+    /**
+     * Destroy container with all children component
+     */
     destroy() {
         this.children.forEach(c => {
             c.destroy();

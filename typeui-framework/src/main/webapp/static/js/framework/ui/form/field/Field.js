@@ -36,6 +36,10 @@ var Field = (function (_super) {
     Field.prototype.setFieldLabel = function (fieldLabel) {
         this.fieldLabel.setText(fieldLabel);
     };
+    Field.prototype.destroy = function () {
+        this.fieldWrapper.destroy();
+        _super.prototype.destroy.call(this);
+    };
     return Field;
 })(Component);
 //# sourceMappingURL=Field.js.map

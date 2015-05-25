@@ -46,10 +46,13 @@ var UserForm = (function (_super) {
         //        genderField.setFieldLabel("Gender");
         //        
         //Are you sure?
-        this.checkbox = new Checkbox(this);
+        this.checkbox = new RadioButton(this);
         this.checkbox.setText("Yes");
         this.checkbox.setName("sure");
-        this.checkbox.setFieldLabel("Are you sure");
+        this.checkbox.setFieldLabel("Are you sure?");
+        this.checkbox = new RadioButton(this);
+        this.checkbox.setText("No");
+        this.checkbox.setName("sure");
         //Email field
         this.emailField = new EmailField(this);
         this.emailField.setName("email");

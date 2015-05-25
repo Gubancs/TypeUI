@@ -51,6 +51,9 @@ var Container = (function (_super) {
     Container.prototype.getChildren = function () {
         return this.children;
     };
+    /**
+     * Destroy container with all children component
+     */
     Container.prototype.destroy = function () {
         this.children.forEach(function (c) {
             c.destroy();

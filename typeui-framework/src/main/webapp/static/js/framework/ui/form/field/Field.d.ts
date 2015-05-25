@@ -13,4 +13,5 @@ declare class Field extends Component {
     doRender(htmlElement: HTMLElement): void;
     static getForm(component: Component): Form;
     setFieldLabel(fieldLabel: string): void;
+    destroy(): void;
 }
