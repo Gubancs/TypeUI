@@ -10,7 +10,7 @@ var __extends = this.__extends || function (d, b) {
 var TextField = (function (_super) {
     __extends(TextField, _super);
     function TextField(form, useWrapperContainer) {
-        _super.call(this, form, 0 /* TEXT */, useWrapperContainer);
+        _super.call(this, form, InputType.TEXT, useWrapperContainer);
         this.addClass("ui-textfield");
     }
     TextField.prototype.addKeyupListener = function (listener) {

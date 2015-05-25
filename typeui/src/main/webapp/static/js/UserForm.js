@@ -86,11 +86,11 @@ var UserForm = (function (_super) {
     UserForm.prototype.initButtons = function (buttonBar) {
         //OK button
         this.okButton = new Button(buttonBar);
-        this.okButton.setButtonType(ButtonType.BUTTON);
+        this.okButton.setButtonType(1 /* BUTTON */);
         this.okButton.setText("Submit");
         this.okButton.addClass("custom-ok-button");
         this.okButton.setIconClass("fa fa-check");
-        this.okButton.setIconAlign(IconAlign.LEFT);
+        this.okButton.setIconAlign(0 /* LEFT */);
         //Cancel button
         this.cancelButton = new Button(buttonBar);
         this.cancelButton.setText("Cancel");
