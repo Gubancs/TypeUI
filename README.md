@@ -12,10 +12,11 @@ This repository contains a TypeScript frontend framework for web applications ba
 
 <h4>Features</h4>
 <ul>
+<li>Platform and browser independent</li>
 <li>Obejct oriented UI programming</li>
 <li>Support bidirectional data binding between UI component and data model</li>
 <li>Type safe programming language for client side applications provided by TypeScript language</li>
-<li>Clean and user-friendly components</li>
+<li>Clean, responsive and user-friendly components</li>
 <li>Easy to learn and easy to use.</li>
 <li>Customizable</li>
 </ul>
