@@ -14,7 +14,7 @@ This repository contains a TypeScript frontend framework for web applications ba
 <li>Customizable</li>
 </ul>
 
-<h3>What's New in version 0.1.0</h3>
+<h5>What's New in version 0.1.0</h5>
 <ul>
   <li>I created the first implementation of the Component hierachy with rendering</li>
   <li>I created the base UI form components, TextField, Textarea, DateField, Checkbox etc.</li>
