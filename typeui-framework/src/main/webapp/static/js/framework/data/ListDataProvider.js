@@ -14,6 +14,9 @@ var ListDataProvider = (function () {
     ListDataProvider.prototype.forEach = function (callbackfn, thisArg) {
         this.list.forEach(callbackfn);
     };
+    ListDataProvider.prototype.isEmpty = function () {
+        return ListUtils.isEmpty(this.list);
+    };
     return ListDataProvider;
 })();
 //# sourceMappingURL=ListDataProvider.js.map

@@ -1,8 +1,9 @@
 @import "../common.less";
 @import "../mixins.less";
-
+@import "ui-container.less";
 
 .ui-panel{
+	&:extend(.ui-container all);
 	border: 1px @borderColor solid;
 	border-radius: @borderRadius;
 }

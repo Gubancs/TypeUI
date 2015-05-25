@@ -9,24 +9,6 @@ var Gender;
     Gender[Gender["MALE"] = 0] = "MALE";
     Gender[Gender["FEMALE"] = 1] = "FEMALE";
 })(Gender || (Gender = {}));
-var UserLabelProvider = (function () {
-    function UserLabelProvider() {
-    }
-    UserLabelProvider.prototype.getLabel = function (user) {
-        return user.getName();
-    };
-    return UserLabelProvider;
-})();
-var UserDataProvider = (function (_super) {
-    __extends(UserDataProvider, _super);
-    function UserDataProvider() {
-        _super.apply(this, arguments);
-    }
-    UserDataProvider.prototype.getValue = function (user) {
-        return user.getId();
-    };
-    return UserDataProvider;
-})(ListDataProvider);
 /**
  *
  * Example form
@@ -36,8 +18,8 @@ var UserForm = (function (_super) {
     function UserForm(parent) {
         _super.call(this, parent);
         this.setLabelWidth(200);
-        this.setLabelAlign(1 /* RIGHT */);
-        this.setHttpMethod(0 /* GET */);
+        this.setLabelAlign(LabelAlign.RIGHT);
+        this.setHttpMethod(HttpMethod.GET);
         this.setAction("");
         this.setValidateOnBlur(true);
     }
@@ -63,7 +45,6 @@ var UserForm = (function (_super) {
         this.dateField.setFieldLabel("Birth date");
         //Gender field
         var genderField = new Combobox(this);
-        var dataProvider = new UserDataProvider(this.getDummyUsers());
         genderField.setDataProvider(new EnumDataProvider(Gender));
         genderField.setFieldLabel("Gender");
         //Are you sure?
@@ -86,11 +67,11 @@ var UserForm = (function (_super) {
     UserForm.prototype.initButtons = function (buttonBar) {
         //OK button
         this.okButton = new Button(buttonBar);
-        this.okButton.setButtonType(1 /* BUTTON */);
+        this.okButton.setButtonType(ButtonType.BUTTON);
         this.okButton.setText("Submit");
         this.okButton.addClass("custom-ok-button");
         this.okButton.setIconClass("fa fa-check");
-        this.okButton.setIconAlign(0 /* LEFT */);
+        this.okButton.setIconAlign(IconAlign.LEFT);
         //Cancel button
         this.cancelButton = new Button(buttonBar);
         this.cancelButton.setText("Cancel");
@@ -125,18 +106,6 @@ var UserForm = (function (_super) {
     };
     UserForm.prototype.firstNameChangeHandler = function (e) {
         Log.info("First name changed", e);
-    };
-    UserForm.prototype.getDummyUsers = function () {
-        var users = new List();
-        users.add(new User("1", "Gabor"));
-        users.add(new User("2", "Pista"));
-        users.add(new User("3", "Péter"));
-        users.add(new User("4", "Jolán"));
-        users.add(new User("5", "Gabor"));
-        users.add(new User("6", "Pista"));
-        users.add(new User("7", "Péter"));
-        users.add(new User("8", "Jolán"));
-        return users;
     };
     return UserForm;
 })(Form);

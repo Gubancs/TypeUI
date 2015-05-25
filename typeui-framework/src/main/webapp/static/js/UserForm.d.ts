@@ -2,12 +2,6 @@ declare enum Gender {
     MALE = 0,
     FEMALE = 1,
 }
-declare class UserLabelProvider implements LabelProvider {
-    getLabel(user: User): string;
-}
-declare class UserDataProvider extends ListDataProvider<User> {
-    getValue(user: User): string;
-}
 /**
  *
  * Example form
@@ -34,5 +28,4 @@ declare class UserForm extends Form {
      */
     onButtonClickHandler(e: MouseEvent): void;
     firstNameChangeHandler(e: Event): void;
-    getDummyUsers(): List<User>;
 }

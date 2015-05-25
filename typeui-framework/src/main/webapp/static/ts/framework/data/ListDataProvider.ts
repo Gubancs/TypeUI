@@ -19,5 +19,9 @@ class ListDataProvider<T> implements DataProvider {
     forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void {
         this.list.forEach(callbackfn);
     }
+
+    isEmpty(): boolean {
+        return ListUtils.isEmpty(this.list);
+    }
 }
 

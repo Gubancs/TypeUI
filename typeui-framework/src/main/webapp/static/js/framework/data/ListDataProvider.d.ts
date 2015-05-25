@@ -8,4 +8,5 @@ declare class ListDataProvider<T> implements DataProvider {
     constructor(list: List<T>);
     getValue(data: T): string;
     forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+    isEmpty(): boolean;
 }

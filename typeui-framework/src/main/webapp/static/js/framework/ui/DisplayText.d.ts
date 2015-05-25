@@ -15,7 +15,7 @@ declare enum TextType {
 declare class DisplayText extends Component {
     private text;
     private type;
-    constructor(parent: Container, type: TextType);
+    constructor(parent: Container, type?: TextType);
     render(): void;
     private createElement(type);
     setText(text: string): void;

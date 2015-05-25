@@ -36,6 +36,9 @@
 	<js>/static/js/framework/ui/DisplayText.js</js>
 	<js>/static/js/framework/ui/Panel.js</js>
 	<js>/static/js/framework/ui/BodyContainer.js</js>
+	
+	<!-- Grid -->
+	<js>/static/js/framework/ui/grid/ColumnModel.js</js>
 	<js>/static/js/framework/ui/grid/Grid.js</js>
 	
 	<!-- Form elements -->

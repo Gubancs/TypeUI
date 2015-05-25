@@ -14,10 +14,10 @@ class DisplayText extends Component {
 
     private type: TextType;
 
-    constructor(parent: Container, type: TextType) {
+    constructor(parent: Container, type?: TextType) {
         super(parent);
 
-        this.type = type;
+        this.type = type || TextType.SPAN;
     }
 
     render() {
@@ -25,12 +25,12 @@ class DisplayText extends Component {
         textElement.textContent = this.getText();
         super.doRender(textElement);
     }
-    
-    private createElement(type:TextType): HTMLElement{
-        switch(type){
+
+    private createElement(type: TextType): HTMLElement {
+        switch (type) {
             case TextType.H1: return ElementFactory.createHeader1();
         }
-        
+
         return ElementFactory.createSpan();
     }
 

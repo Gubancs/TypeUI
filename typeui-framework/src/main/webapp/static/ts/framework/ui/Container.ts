@@ -3,19 +3,20 @@ class Container extends Component {
 
     private children: List<Component>;
 
+
     constructor(parent: Container, useWrapperContainer?: boolean) {
         super(parent, useWrapperContainer);
 
         this.children = new List<Component>();
-        
+
         this.init();
         this.createComponents();
     }
-    
+
     protected init() {
     }
-    
-    protected createComponents(){
+
+    protected createComponents() {
     }
 
 

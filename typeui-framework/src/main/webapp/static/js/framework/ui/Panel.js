@@ -23,7 +23,8 @@ var Panel = (function (_super) {
         //Create header
         this.panelHeader = new Container(this);
         this.panelHeader.addClass("ui-panel-header");
-        this.panelTitle = new DisplayText(this.panelHeader, 0 /* SPAN */);
+        this.icon = new Icon(this.panelHeader);
+        this.panelTitle = new DisplayText(this.panelHeader);
         this.panelTitle.addClass("ui-panel-title");
         //Create body
         this.panelBody = new Container(this);
@@ -38,6 +39,9 @@ var Panel = (function (_super) {
     };
     Panel.prototype.getBody = function () {
         return this.panelBody;
+    };
+    Panel.prototype.setIconClass = function (className) {
+        this.icon.setClass(className);
     };
     return Panel;
 })(Container);

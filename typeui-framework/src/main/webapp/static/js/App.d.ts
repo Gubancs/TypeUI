@@ -1,3 +1,9 @@
+declare class UserLabelProvider implements LabelProvider {
+    getLabel(user: User): string;
+}
+declare class UserDataProvider extends ListDataProvider<User> {
+    getValue(user: User): string;
+}
 /**
  * Singleton application
  *
@@ -32,4 +38,5 @@ declare class Application {
      * @return Return the name of the application
      */
     getName(): string;
+    getDummyUsers(): List<User>;
 }

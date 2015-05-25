@@ -14,6 +14,7 @@ class Panel extends Container {
 
     private panelTitle: DisplayText;
 
+    private icon: Icon;
     
     /**
      * Create a new instance of Panel
@@ -30,7 +31,8 @@ class Panel extends Container {
         //Create header
         this.panelHeader = new Container(this);
         this.panelHeader.addClass("ui-panel-header");
-        this.panelTitle = new DisplayText(this.panelHeader, TextType.SPAN);
+        this.icon = new Icon(this.panelHeader);
+        this.panelTitle = new DisplayText(this.panelHeader);
         this.panelTitle.addClass("ui-panel-title");
 
         
@@ -51,5 +53,9 @@ class Panel extends Container {
 
     getBody(): Container {
         return this.panelBody;
+    }
+
+    setIconClass(className: string) {
+        this.icon.setClass(className);
     }
 }

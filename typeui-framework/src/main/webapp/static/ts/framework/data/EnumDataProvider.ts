@@ -28,4 +28,8 @@ class EnumDataProvider implements DataProvider {
     forEach<T>(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void {
         this.dataProvider.forEach(callbackfn);
     }
+
+    isEmpty(): boolean {
+        return this.dataProvider.isEmpty();
+    }
 }

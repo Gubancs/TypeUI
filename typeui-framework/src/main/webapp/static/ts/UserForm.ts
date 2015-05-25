@@ -3,17 +3,6 @@ enum Gender {
     MALE, FEMALE
 }
 
-class UserLabelProvider implements LabelProvider {
-    getLabel(user: User): string {
-        return user.getName();
-    }
-}
-
-class UserDataProvider extends ListDataProvider<User> {
-    getValue(user: User): string {
-        return user.getId();
-    }
-}
 
 /**
  * 
@@ -70,7 +59,6 @@ class UserForm extends Form {
           
         //Gender field
         var genderField = new Combobox(this);
-        var dataProvider = new UserDataProvider(this.getDummyUsers());
         genderField.setDataProvider(new EnumDataProvider(Gender));
         genderField.setFieldLabel("Gender");
         
@@ -153,19 +141,5 @@ class UserForm extends Form {
         Log.info("First name changed", e);
     }
 
-    getDummyUsers(): List<User> {
-        var users = new List<User>();
-
-        users.add(new User("1", "Gabor"));
-        users.add(new User("2", "Pista"));
-        users.add(new User("3", "Péter"));
-        users.add(new User("4", "Jolán"));
-
-        users.add(new User("5", "Gabor"));
-        users.add(new User("6", "Pista"));
-        users.add(new User("7", "Péter"));
-        users.add(new User("8", "Jolán"));
-
-        return users;
-    }
+  
 }

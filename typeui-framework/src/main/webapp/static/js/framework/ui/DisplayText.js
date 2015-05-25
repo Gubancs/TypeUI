@@ -23,7 +23,7 @@ var DisplayText = (function (_super) {
     __extends(DisplayText, _super);
     function DisplayText(parent, type) {
         _super.call(this, parent);
-        this.type = type;
+        this.type = type || 0 /* SPAN */;
     }
     DisplayText.prototype.render = function () {
         var textElement = this.createElement(this.type);

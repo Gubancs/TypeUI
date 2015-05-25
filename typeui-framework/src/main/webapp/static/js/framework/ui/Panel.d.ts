@@ -7,6 +7,7 @@ declare class Panel extends Container {
     private panelBody;
     private panelFooter;
     private panelTitle;
+    private icon;
     /**
      * Create a new instance of Panel
      *
@@ -16,4 +17,5 @@ declare class Panel extends Container {
     protected init(): void;
     setTitle(title: string): void;
     getBody(): Container;
+    setIconClass(className: string): void;
 }

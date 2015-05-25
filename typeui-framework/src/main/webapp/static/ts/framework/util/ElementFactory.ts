@@ -104,12 +104,14 @@ class ElementFactory {
         return DOMHelper.getDocument().createElement("option");
     }
     
-      /**
-     * Create an icon element
-     * 
-     * @return {HTML}
-     */
+    /**
+   * Create an icon element
+   * 
+   * @return {HTML}
+   */
     static createIcon(): HTMLPhraseElement {
         return DOMHelper.getDocument().createElement("i");
     }
+
+
 }

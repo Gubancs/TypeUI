@@ -1,3 +1,6 @@
+table {
+  border-spacing: 0px;
+}
 button {
   -webkit-appearance: none;
   background: none;

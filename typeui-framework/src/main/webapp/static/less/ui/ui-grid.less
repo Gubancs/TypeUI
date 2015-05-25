@@ -1,0 +1,26 @@
+
+@import "../common.less";
+@import "../mixins.less";
+@import "form/ui-button.less";
+
+
+.ui-grid{
+	width:100%;
+	height:100%;
+	border: 1px @borderColor solid;
+}
+
+.ui-grid-header{
+	.gradient(rgb(244, 244, 244), #fff);	
+	border: 1px @borderColor solid;
+}
+
+.ui-grid-header-column{
+	&:extend(.ui-button all);
+	
+	&:hover{
+		transition: background @transitionDuration ease-in-out;
+		background: @selectedColor;
+		border-color: @selectedBorderColor; 
+	}
+}
