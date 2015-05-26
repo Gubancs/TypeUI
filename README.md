@@ -6,7 +6,7 @@ This repository contains a TypeScript frontend framework for web applications ba
 
 
 <h3>Screenshot</h3>
-<img src="https://github.com/Gubancs/TypeUI/blob/master/typeui-framework/src/main/webapp/screenshots/user_registration_form.png" width="500"></img>
+<img src="https://github.com/Gubancs/TypeUI/blob/master/typeui-framework/src/main/webapp/screenshots/Screen%20Shot%202015-05-26%20at%2020.48.58.png?raw=true" width="500"></img>
 
 ```javascript
      /**
@@ -20,6 +20,12 @@ This repository contains a TypeScript frontend framework for web applications ba
         panel.setTitle("User registration");
 
         var userForm = new UserForm(panel.getBody());
+        
+        //Create an example notification
+        var notification = Notification.success(userForm);
+        notification.setMessage("This is an example message");
+        notification.setTitle("Information");
+        notification.setClosable(true);
     }
 ```
 
@@ -33,6 +39,11 @@ This repository contains a TypeScript frontend framework for web applications ba
 <li>Clean, responsive and user-friendly components</li>
 <li>Easy to learn and easy to use.</li>
 <li>Customizable</li>
+</ul>
+
+<h4>What's New in version 0.2.0</h4>
+<ul>
+  <li>New components: Notification</li>
 </ul>
 
 <h4>What's New in version 0.1.0</h4>
