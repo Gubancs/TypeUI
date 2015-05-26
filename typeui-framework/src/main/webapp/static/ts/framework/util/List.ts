@@ -28,8 +28,8 @@ class List<T> {
     }
 
 
-    remove(t: T) {
-        var index = this.array.indexOf(t);
+    remove(element: T) {
+        var index = this.array.indexOf(element);
 
         if (index > -1) {
             this.removeAt(index);
@@ -58,5 +58,14 @@ class List<T> {
      */
     reverse() {
         this.array.reverse();
+    }
+
+    /**
+     * Check the array is empty
+     * 
+     * @return {boolean} Return true if the size of array equals zero
+     */
+    isEmpty(): boolean {
+        return this.size() == 0;
     }
 }

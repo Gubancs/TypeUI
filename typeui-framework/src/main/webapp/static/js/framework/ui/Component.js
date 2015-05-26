@@ -82,10 +82,10 @@ var Component = (function (_super) {
             Log.debug("Initialize listener", eventName, listeners.get(eventName));
         });
     };
-    Component.prototype.addEventListener = function (eventName, listener) {
+    Component.prototype.addListener = function (eventName, listener) {
         _super.prototype.addListener.call(this, eventName, listener);
     };
-    Component.prototype.removeEventListeners = function (eventName) {
+    Component.prototype.removeListeners = function (eventName) {
         var htmlElement = this.getElement();
         var listeners = _super.prototype.getListeners.call(this, eventName);
         listeners.forEach(function (listener) {
@@ -94,7 +94,7 @@ var Component = (function (_super) {
         return _super.prototype.removeListeners.call(this, eventName);
     };
     Component.prototype.on = function (eventName, listener) {
-        this.addEventListener(eventName, listener);
+        this.addListener(eventName, listener);
     };
     Component.prototype.getContainer = function () {
         return this.parent;
@@ -121,9 +121,6 @@ var Component = (function (_super) {
     };
     Component.prototype.getClassList = function () {
         return this.classList;
-    };
-    Component.prototype.hasClass = function (className) {
-        return this.classList.contains(className);
     };
     Component.prototype.isRendered = function () {
         return this.rendered;
@@ -177,15 +174,21 @@ var Component = (function (_super) {
     /**
      *
      * Show  the component
+     *
+     * @return {Component} Return the visible component
      */
     Component.prototype.show = function () {
         this.setVisible(true);
+        return this;
     };
     /**
      * Hide the component
+     *
+     * @return {Component} Return the hidden component
      */
     Component.prototype.hide = function () {
         this.setVisible(false);
+        return this;
     };
     Component.prototype.setWidth = function (width) {
         if (this.isRendered()) {

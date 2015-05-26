@@ -1,0 +1,56 @@
+.ui-notification {
+  position: relative;
+  padding: 16px;
+  border-radius: 3px;
+  border: 1px #dfdfdf solid;
+  background-color: #f4f4f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ffffff));
+  background: -webkit-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -moz-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -ms-linear-gradient(top, #f4f4f4, #ffffff);
+  background: -o-linear-gradient(top, #f4f4f4, #ffffff);
+  box-shadow: 0px 3px 0px rgba(200, 200, 200, 0.2);
+  margin-bottom: 8px;
+}
+.ui-notification .ui-closebutton {
+  color: #666666;
+}
+.ui-notification.success {
+  background-color: #bbf2b9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bbf2b9), to(#d4f9d9));
+  background: -webkit-linear-gradient(top, #bbf2b9, #d4f9d9);
+  background: -moz-linear-gradient(top, #bbf2b9, #d4f9d9);
+  background: -ms-linear-gradient(top, #bbf2b9, #d4f9d9);
+  background: -o-linear-gradient(top, #bbf2b9, #d4f9d9);
+  color: #236421;
+  border: 1px #ACD79D solid;
+}
+.ui-notification.success .ui-notification-title,
+.ui-notification.success .ui-closebutton {
+  color: #216413;
+}
+.ui-notification.info {
+  background-color: #b9e9f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b9e9f2), to(#d4f1f9));
+  background: -webkit-linear-gradient(top, #b9e9f2, #d4f1f9);
+  background: -moz-linear-gradient(top, #b9e9f2, #d4f1f9);
+  background: -ms-linear-gradient(top, #b9e9f2, #d4f1f9);
+  background: -o-linear-gradient(top, #b9e9f2, #d4f1f9);
+  color: #236478;
+  border: 1px #9DCCD7 solid;
+}
+.ui-notification.info .ui-notification-title,
+.ui-notification.info .ui-closebutton {
+  color: #135564;
+}
+.ui-notification-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+.ui-notification-title .ui-icon {
+  float: left;
+  margin-right: 8px;
+}
+

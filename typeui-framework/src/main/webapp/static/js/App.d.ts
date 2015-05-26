@@ -23,11 +23,13 @@ declare class Application {
       * @return The single instance of the apllication
       */
     static getInstance(): Application;
+    run(): void;
     /**
-     * Start the application, and render to the body
+     * Start application
      *
+     * @param {Container} bodyContainer
      */
-    start(): void;
+    onApplicationStart(bodyContainer: Container): void;
     /**
      *
      * @return Return the version of the application

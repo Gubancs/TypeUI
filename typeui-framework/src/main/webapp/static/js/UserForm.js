@@ -24,7 +24,11 @@ var UserForm = (function (_super) {
         this.setValidateOnBlur(true);
     }
     UserForm.prototype.createComponents = function () {
-        var toolkit = new FormToolkit();
+        var notification = Notification.success(this);
+        notification.setMessage("This is an example message");
+        notification.setTitle("Information");
+        notification.setClosable(true);
+        notification.setDelay(3000);
         //First name field
         this.firstNameField = new TextField(this);
         this.firstNameField.setName("firstName");

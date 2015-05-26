@@ -1,0 +1,57 @@
+
+@import "../common.less";
+@import "../mixins.less";
+
+
+.ui-notification {
+	position: relative;
+	padding: @padding *2;
+	border-radius: @borderRadius;
+	border: 1px @borderColor solid;
+	.gradient(rgb(244, 244, 244), #fff);
+	box-shadow: 0px 3px 0px rgba(200, 200, 200, 0.2);
+	
+	margin-bottom:@padding;
+	
+	.ui-closebutton {
+		color: @fontColor;
+	}
+
+
+	&.success{
+		.gradient(#BBF2B9, #D4F9D9);
+		 color :rgb(35, 100, 33);
+		 border: 1px #ACD79D solid;
+		.ui-notification-title, .ui-closebutton{
+			color: rgb(33, 100, 19);
+		}
+	}
+	
+	&.info{
+		.gradient(#B9E9F2, #D4F1F9);
+		 color :rgb(35, 100, 120);
+		  border: 1px #9DCCD7 solid;
+		.ui-notification-title, .ui-closebutton{
+			color: #135564;
+		}
+	}
+}
+
+
+.ui-notification-title{
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+	margin-bottom:@padding;
+	
+	
+	.ui-icon{
+		float:left;
+		margin-right: @padding;
+	}
+}
+
+.ui-notification-message{
+	
+}
+

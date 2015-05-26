@@ -17,8 +17,8 @@ var List = (function () {
     List.prototype.get = function (index) {
         return this.array[index];
     };
-    List.prototype.remove = function (t) {
-        var index = this.array.indexOf(t);
+    List.prototype.remove = function (element) {
+        var index = this.array.indexOf(element);
         if (index > -1) {
             this.removeAt(index);
         }
@@ -42,6 +42,14 @@ var List = (function () {
      */
     List.prototype.reverse = function () {
         this.array.reverse();
+    };
+    /**
+     * Check the array is empty
+     *
+     * @return {boolean} Return true if the size of array equals zero
+     */
+    List.prototype.isEmpty = function () {
+        return this.size() == 0;
     };
     return List;
 })();

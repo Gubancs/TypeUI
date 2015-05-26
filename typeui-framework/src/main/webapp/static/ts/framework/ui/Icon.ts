@@ -19,4 +19,9 @@ class Icon extends Component {
         super.setClass(className);
         super.addClass("ui-icon");
     }
+
+    hasClass(): boolean {
+        return ListUtils.isEmpty(this.getClassList());
+    }
+
 }

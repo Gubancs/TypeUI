@@ -56,7 +56,7 @@ class Button extends Container {
     }
 
     addClickListener(listener: EventListener) {
-        this.addEventListener(Button.EVENT_CLICK, listener);
+        this.addListener(Button.EVENT_CLICK, listener);
     }
 
     setIconClass(iconClass: string) {

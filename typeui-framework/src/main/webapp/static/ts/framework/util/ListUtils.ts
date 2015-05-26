@@ -11,6 +11,6 @@ class ListUtils {
      * @return Return true if the parameter 'list' is null or is an empty list
      */
     static isEmpty(list: List<any>): boolean {
-        return list == null || list.size() == 0;
+        return list == null || list.isEmpty();
     }
 }

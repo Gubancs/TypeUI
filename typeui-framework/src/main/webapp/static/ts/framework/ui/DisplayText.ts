@@ -8,7 +8,9 @@ enum TextType {
  * 
  * @author Gabor Kokeny
  */
-class DisplayText extends Component {
+class DisplayText extends Container {
+
+    private iconClass: string;
 
     private text: string;
 
@@ -18,6 +20,14 @@ class DisplayText extends Component {
         super(parent);
 
         this.type = type || TextType.SPAN;
+    }
+
+    protected beforeRender() {
+        if (this.iconClass) {
+            var icon = new Icon(this);
+            icon.setClass(this.iconClass);
+        }
+        super.beforeRender();
     }
 
     render() {
@@ -44,5 +54,14 @@ class DisplayText extends Component {
 
     getText(): string {
         return this.text;
+    }
+
+    /**
+     * Set the icon for this displaytext
+     * 
+     * @param {string} iconClass
+     */
+    setIconClass(iconClass: string) {
+        this.iconClass = iconClass;
     }
 }

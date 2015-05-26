@@ -33,4 +33,9 @@
 .ui-button-text {
   text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
 }
+.ui-closebutton-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 

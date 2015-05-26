@@ -156,11 +156,11 @@ class Component extends Observable {
 
     }
 
-    addEventListener(eventName: string, listener: EventListener) {
+    addListener(eventName: string, listener: EventListener) {
         super.addListener(eventName, listener);
     }
 
-    removeEventListeners(eventName: string): boolean {
+    removeListeners(eventName: string): boolean {
         var htmlElement = this.getElement();
         var listeners = super.getListeners(eventName);
 
@@ -172,7 +172,7 @@ class Component extends Observable {
     }
 
     on(eventName: string, listener: EventListener) {
-        this.addEventListener(eventName, listener);
+        this.addListener(eventName, listener);
     }
 
     getContainer(): Container {
@@ -204,10 +204,6 @@ class Component extends Observable {
 
     getClassList(): List<string> {
         return this.classList;
-    }
-
-    hasClass(className: string) {
-        return this.classList.contains(className);
     }
 
     isRendered(): boolean {
@@ -270,16 +266,22 @@ class Component extends Observable {
     /**
      * 
      * Show  the component
+     * 
+     * @return {Component} Return the visible component
      */
-    show() {
+    show(): Component {
         this.setVisible(true);
+        return this;
     }
     
     /**
      * Hide the component
+     * 
+     * @return {Component} Return the hidden component
      */
-    hide() {
+    hide(): Component {
         this.setVisible(false);
+        return this;
     }
 
     setWidth(width: number) {

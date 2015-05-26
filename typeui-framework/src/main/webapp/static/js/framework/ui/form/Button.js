@@ -45,7 +45,7 @@ var Button = (function (_super) {
         return this.buttonType;
     };
     Button.prototype.addClickListener = function (listener) {
-        this.addEventListener(Button.EVENT_CLICK, listener);
+        this.addListener(Button.EVENT_CLICK, listener);
     };
     Button.prototype.setIconClass = function (iconClass) {
         this.icon.setClass(iconClass);

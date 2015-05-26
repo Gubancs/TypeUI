@@ -6,7 +6,7 @@ declare class List<T> {
     add(t: T): void;
     indexOf(t: T): number;
     get(index: number): T;
-    remove(t: T): void;
+    remove(element: T): void;
     removeAt(index: number): void;
     forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
     /**
@@ -19,4 +19,10 @@ declare class List<T> {
      *
      */
     reverse(): void;
+    /**
+     * Check the array is empty
+     *
+     * @return {boolean} Return true if the size of array equals zero
+     */
+    isEmpty(): boolean;
 }

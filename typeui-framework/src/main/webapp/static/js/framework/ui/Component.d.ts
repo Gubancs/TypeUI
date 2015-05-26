@@ -77,8 +77,8 @@ declare class Component extends Observable {
     protected beforeRender(): void;
     protected afterRender(): void;
     protected initEventListeners(): void;
-    addEventListener(eventName: string, listener: EventListener): void;
-    removeEventListeners(eventName: string): boolean;
+    addListener(eventName: string, listener: EventListener): void;
+    removeListeners(eventName: string): boolean;
     on(eventName: string, listener: EventListener): void;
     getContainer(): Container;
     getElement(): HTMLElement;
@@ -89,7 +89,6 @@ declare class Component extends Observable {
      */
     setClass(className: string): void;
     getClassList(): List<string>;
-    hasClass(className: string): boolean;
     isRendered(): boolean;
     /**
      * Remove htmlElement from the DOM and destroy itself.
@@ -113,12 +112,16 @@ declare class Component extends Observable {
     /**
      *
      * Show  the component
+     *
+     * @return {Component} Return the visible component
      */
-    show(): void;
+    show(): Component;
     /**
      * Hide the component
+     *
+     * @return {Component} Return the hidden component
      */
-    hide(): void;
+    hide(): Component;
     setWidth(width: number): void;
     getWidth(): number;
     setId(id: string): void;

@@ -25,6 +25,13 @@ var DisplayText = (function (_super) {
         _super.call(this, parent);
         this.type = type || 0 /* SPAN */;
     }
+    DisplayText.prototype.beforeRender = function () {
+        if (this.iconClass) {
+            var icon = new Icon(this);
+            icon.setClass(this.iconClass);
+        }
+        _super.prototype.beforeRender.call(this);
+    };
     DisplayText.prototype.render = function () {
         var textElement = this.createElement(this.type);
         textElement.textContent = this.getText();
@@ -45,6 +52,14 @@ var DisplayText = (function (_super) {
     DisplayText.prototype.getText = function () {
         return this.text;
     };
+    /**
+     * Set the icon for this displaytext
+     *
+     * @param {string} iconClass
+     */
+    DisplayText.prototype.setIconClass = function (iconClass) {
+        this.iconClass = iconClass;
+    };
     return DisplayText;
-})(Component);
+})(Container);
 //# sourceMappingURL=DisplayText.js.map

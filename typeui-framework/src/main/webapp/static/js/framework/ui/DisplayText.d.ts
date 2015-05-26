@@ -12,12 +12,20 @@ declare enum TextType {
  *
  * @author Gabor Kokeny
  */
-declare class DisplayText extends Component {
+declare class DisplayText extends Container {
+    private iconClass;
     private text;
     private type;
     constructor(parent: Container, type?: TextType);
+    protected beforeRender(): void;
     render(): void;
     private createElement(type);
     setText(text: string): void;
     getText(): string;
+    /**
+     * Set the icon for this displaytext
+     *
+     * @param {string} iconClass
+     */
+    setIconClass(iconClass: string): void;
 }

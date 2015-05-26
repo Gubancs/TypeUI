@@ -21,6 +21,9 @@ var Icon = (function (_super) {
         _super.prototype.setClass.call(this, className);
         _super.prototype.addClass.call(this, "ui-icon");
     };
+    Icon.prototype.hasClass = function () {
+        return ListUtils.isEmpty(this.getClassList());
+    };
     return Icon;
 })(Component);
 //# sourceMappingURL=Icon.js.map

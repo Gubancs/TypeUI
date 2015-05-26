@@ -11,7 +11,7 @@ var ListUtils = (function () {
      * @return Return true if the parameter 'list' is null or is an empty list
      */
     ListUtils.isEmpty = function (list) {
-        return list == null || list.size() == 0;
+        return list == null || list.isEmpty();
     };
     return ListUtils;
 })();

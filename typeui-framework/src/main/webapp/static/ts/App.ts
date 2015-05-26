@@ -43,31 +43,28 @@ class Application {
         return Application.INSTANCE;
     }
 
-    /**
-     * Start the application, and render to the body
-     * 
-     */
-    start(): void {
-        var toolkit = new FormToolkit();
-
+    //TODO moved to inherited class
+    run() {
         var bodyContainer = new BodyContainer();
-
+        this.onApplicationStart(bodyContainer);
+        
+        bodyContainer.render();
+    }
+    
+    /**
+     * Start application
+     * 
+     * @param {Container} bodyContainer
+     */
+    onApplicationStart(bodyContainer: Container): void {
         var panel = new Panel(bodyContainer);
         panel.setIconClass("fa fa-user");
         panel.setTitle("User registration");
-        
-        var userForm = new UserForm(panel.getBody());
 
-        var userGrid = new UserGrid(panel.getBody());
-        var dataProvider = new UserDataProvider(this.getDummyUsers());
-        userGrid.setDataProvider(dataProvider);
-        bodyContainer.render();
-        
-        Log.info("Application started successfully");
-        
-        userGrid.hide();
+        var userForm = new UserForm(panel.getBody());
     }
 
+    
     /**
      * 
      * @return Return the version of the application
@@ -101,4 +98,4 @@ class Application {
     }
 }
 
-Application.getInstance().start();
+Application.getInstance().run();

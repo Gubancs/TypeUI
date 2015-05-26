@@ -47,23 +47,22 @@ var Application = (function () {
         Application.INSTANCE = new Application();
         return Application.INSTANCE;
     };
-    /**
-     * Start the application, and render to the body
-     *
-     */
-    Application.prototype.start = function () {
-        var toolkit = new FormToolkit();
+    //TODO moved to inherited class
+    Application.prototype.run = function () {
         var bodyContainer = new BodyContainer();
+        this.onApplicationStart(bodyContainer);
+        bodyContainer.render();
+    };
+    /**
+     * Start application
+     *
+     * @param {Container} bodyContainer
+     */
+    Application.prototype.onApplicationStart = function (bodyContainer) {
         var panel = new Panel(bodyContainer);
         panel.setIconClass("fa fa-user");
         panel.setTitle("User registration");
         var userForm = new UserForm(panel.getBody());
-        var userGrid = new UserGrid(panel.getBody());
-        var dataProvider = new UserDataProvider(this.getDummyUsers());
-        userGrid.setDataProvider(dataProvider);
-        bodyContainer.render();
-        Log.info("Application started successfully");
-        userGrid.hide();
     };
     /**
      *
@@ -93,5 +92,5 @@ var Application = (function () {
     };
     return Application;
 })();
-Application.getInstance().start();
+Application.getInstance().run();
 //# sourceMappingURL=App.js.map
