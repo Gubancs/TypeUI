@@ -9,7 +9,7 @@ class TextArea extends TextField {
     constructor(form: Form) {
         super(form, false);
 
-        this.addClass(TextArea.DEFAULT_CLASS);
+        this.setClass(TextArea.DEFAULT_CLASS);
 
     }
 

@@ -11,7 +11,7 @@ var TextArea = (function (_super) {
     __extends(TextArea, _super);
     function TextArea(form) {
         _super.call(this, form, false);
-        this.addClass(TextArea.DEFAULT_CLASS);
+        this.setClass(TextArea.DEFAULT_CLASS);
     }
     TextArea.prototype.render = function () {
         var textAreaHtmlElement = ElementFactory.createTextArea();
