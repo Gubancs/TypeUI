@@ -21,11 +21,5 @@ declare class UserForm extends Form {
      * Initialize custom event listeners
      */
     protected initEventListeners(): void;
-    /**
-     * Mouse event click handler for okButton
-     *
-     * @param {MouseEvent} e
-     */
-    private onButtonClickHandler(e);
     private firstNameChangeHandler(e);
 }

@@ -33,15 +33,16 @@ var Component = (function (_super) {
         this.useWrapperContainer = false;
         this.useWrapperContainer = useWrapperContainer || this.useWrapperContainer;
         this.parent = this.useWrapperContainer ? new Container(parent) : parent;
-        if (this.parent) {
-            this.parent.add(this);
-        }
         this.classList = new List();
         this.visible = true;
         this.rendered = false;
         this.disabled = false;
         this.verticalAlign = 2 /* MIDDLE */;
         this.id = Sequence.next();
+        if (this.parent) {
+            this.parent.add(this);
+        }
+        ComponentManager.register(this);
     }
     Component.prototype.setParent = function (parent) {
         var c = this.useWrapperContainer ? this.getContainer() : this;
@@ -79,7 +80,7 @@ var Component = (function (_super) {
             listeners.get(eventName).forEach(function (listener) {
                 htmlElement.addEventListener(eventName, listener);
             });
-            Log.debug("Initialize listener", eventName, listeners.get(eventName));
+            //Log.debug("Initialize listener", eventName, listeners.get(eventName));
         });
     };
     Component.prototype.addListener = function (eventName, listener) {
@@ -119,6 +120,14 @@ var Component = (function (_super) {
             _this.addClass(cls);
         });
     };
+    /**
+     * Remove CSS class from this component
+     *
+     * @param {string} className The name of the CSS class that should be removed
+     */
+    Component.prototype.removeClass = function (className) {
+        this.classList.remove(className);
+    };
     Component.prototype.getClassList = function () {
         return this.classList;
     };
@@ -139,7 +148,8 @@ var Component = (function (_super) {
         if (this.useWrapperContainer) {
             this.getContainer().destroy();
         }
-        Log.debug("Destroy component ", this);
+        ComponentManager.unregister(this);
+        //Log.debug("Destroy component ", this);
     };
     /**
      * Check the parent Component is null

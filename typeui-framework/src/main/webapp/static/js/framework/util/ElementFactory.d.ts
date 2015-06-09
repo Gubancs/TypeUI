@@ -71,7 +71,19 @@ declare class ElementFactory {
     /**
    * Create an icon element
    *
-   * @return {HTML}
+   * @return {HTMLPhraseElement}
    */
     static createIcon(): HTMLPhraseElement;
+    /**
+     * Create a progress html element
+     *
+     * @return {HTMLProgressElement}
+     */
+    static createProgress(): HTMLProgressElement;
+    /**
+     * Create a list html element
+     *
+     * @return {HTMLOptionElement}
+     */
+    static createList(): HTMLUListElement;
 }

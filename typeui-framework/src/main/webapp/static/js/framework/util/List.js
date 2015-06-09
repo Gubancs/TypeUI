@@ -11,6 +11,15 @@ var List = (function () {
     List.prototype.add = function (t) {
         this.array.push(t);
     };
+    List.prototype.addAll = function (list) {
+        this.concat(list);
+    };
+    List.prototype.concat = function (list) {
+        if (ListUtils.isEmpty(list)) {
+            return;
+        }
+        this.array = this.array.concat(list.array);
+    };
     List.prototype.indexOf = function (t) {
         return this.array.indexOf(t);
     };

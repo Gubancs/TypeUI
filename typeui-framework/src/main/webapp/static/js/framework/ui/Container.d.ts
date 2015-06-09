@@ -28,4 +28,10 @@ declare class Container extends Component {
      * Destroy container with all children component
      */
     destroy(): void;
+    /**
+     * Get child component by index
+     *
+     * @param {number} itemIndex The index of the child component
+     */
+    getComponent(itemIndex: number): Component;
 }

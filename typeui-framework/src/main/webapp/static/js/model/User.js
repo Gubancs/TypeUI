@@ -1,16 +1,46 @@
 var User = (function () {
-    function User(id, name) {
+    function User(id, firstName) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
     }
     User.prototype.getId = function () {
         return this.id;
     };
-    User.prototype.setName = function (name) {
-        this.name = name;
+    User.prototype.getFirstName = function () {
+        return this.firstName;
     };
-    User.prototype.getName = function () {
-        return this.name;
+    User.prototype.setFirstName = function (firstName) {
+        this.firstName = firstName;
+    };
+    User.prototype.getLastName = function () {
+        return this.lastName;
+    };
+    User.prototype.setLastName = function (lastName) {
+        this.lastName = lastName;
+    };
+    User.prototype.getEmail = function () {
+        return this.email;
+    };
+    User.prototype.setEmail = function (email) {
+        this.email = email;
+    };
+    User.prototype.getBirthDate = function () {
+        return this.birthDate;
+    };
+    User.prototype.setBirthDate = function (birthDate) {
+        this.birthDate = birthDate;
+    };
+    User.prototype.isSure = function () {
+        return this.sure;
+    };
+    User.prototype.setSure = function (sure) {
+        this.sure = sure;
+    };
+    User.prototype.getYourself = function () {
+        return this.yourself;
+    };
+    User.prototype.setYourself = function (yourself) {
+        this.yourself = yourself;
     };
     return User;
 })();

@@ -18,6 +18,8 @@ var TextArea = (function (_super) {
         textAreaHtmlElement.placeholder = this.getPlaceholder();
         textAreaHtmlElement.cols = 50;
         textAreaHtmlElement.rows = 8;
+        if (this.getMaxLength())
+            textAreaHtmlElement.maxLength = this.getMaxLength();
         _super.prototype.doRender.call(this, textAreaHtmlElement);
     };
     TextArea.DEFAULT_CLASS = "ui-textarea";

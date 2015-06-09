@@ -2,25 +2,76 @@
 
 class User {
 
-    private name: string;
+    private firstName: string;
+
+    private lastName: string;
+
+    private birthDate: Date;
+
+    private sure: boolean;
+
+    private yourself: string;
+
+    private email: string;
 
     private id: string;
 
 
-    constructor(id: string, name?: string) {
+    constructor(id: string, firstName?: string) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
     }
 
     getId(): string {
         return this.id;
     }
 
-    setName(name: string) {
-        this.name = name;
+    getFirstName(): string {
+        return this.firstName;
     }
 
-    getName(): string {
-        return this.name;
+    setFirstName(firstName: string) {
+        this.firstName = firstName;
+    }
+
+    getLastName(): string {
+        return this.lastName;
+    }
+
+    setLastName(lastName: string) {
+        this.lastName = lastName;
+    }
+
+
+    getEmail(): string {
+        return this.email;
+    }
+
+    setEmail(email: string) {
+        this.email = email;
+    }
+
+    getBirthDate(): Date {
+        return this.birthDate;
+    }
+
+    setBirthDate(birthDate: Date) {
+        this.birthDate = birthDate;
+    }
+
+    isSure(): boolean {
+        return this.sure;
+    }
+
+    setSure(sure: boolean) {
+        this.sure = sure;
+    }
+
+    getYourself(): string {
+        return this.yourself;
+    }
+
+    setYourself(yourself: string) {
+        this.yourself = yourself;
     }
 }

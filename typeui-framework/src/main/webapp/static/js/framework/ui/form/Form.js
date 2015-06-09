@@ -45,7 +45,7 @@ var Form = (function (_super) {
         _super.prototype.doRender.call(this, formElement);
     };
     Form.prototype.clearValues = function () {
-        Log.debug("Clear form values", this);
+        //Log.debug("Clear form values", this);
         this.getChildren().forEach(function (child) {
             //            if (child instanceof FormField) {
             //                child.setValue(null);
@@ -54,16 +54,27 @@ var Form = (function (_super) {
     };
     Form.prototype.getValues = function () {
         var values = {};
-        this.getChildren().forEach(function (child) {
-            //            if (child instanceof FormField) {
-            //                var inputField = child.getInputField();
-            //                values[inputField.getName()] = inputField.getValue();
-            //            }
+        var inputFields = Form.getInputFields(this);
+        Log.groupStart("-- Collect form values");
+        inputFields.forEach(function (inputField) {
+            Log.debug("Field value :", inputField.getName(), inputField.getValue());
+            values[inputField.getName()] = inputField.getValue();
+        });
+        Log.debug("Collect form values finished", values);
+        Log.groupEnd();
+        return values;
+    };
+    Form.getInputFields = function (container) {
+        var inputFields = new List();
+        container.getChildren().forEach(function (child) {
+            if (child instanceof Container) {
+                inputFields.addAll(Form.getInputFields(child));
+            }
             if (child instanceof InputField) {
-                values[child.getName()] = child.getValue();
+                inputFields.add(child);
             }
         });
-        return values;
+        return inputFields;
     };
     Form.prototype.setLabelWidth = function (labelWidth) {
         this.labelWidth = labelWidth;
@@ -112,6 +123,17 @@ var Form = (function (_super) {
      */
     Form.prototype.isValidateOnBlur = function () {
         return this.validateOnBlur;
+    };
+    Form.prototype.setModel = function (model) {
+        this.model = model;
+        var proto = Object.getPrototypeOf(model);
+        var keys = Object.keys(proto);
+        keys.forEach(function (key) {
+            var propertyDescriptor = Object.getOwnPropertyDescriptor(proto, key);
+            var fn = propertyDescriptor.value;
+            //Log.info("Properties ", User.prototype.getFirstName);
+            fn.call(model, "alma");
+        });
     };
     Form.DEFAULT_LABEL_WIDTH = 140;
     return Form;

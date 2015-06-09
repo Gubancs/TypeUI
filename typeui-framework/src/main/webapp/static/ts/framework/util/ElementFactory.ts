@@ -107,11 +107,29 @@ class ElementFactory {
     /**
    * Create an icon element
    * 
-   * @return {HTML}
+   * @return {HTMLPhraseElement}
    */
     static createIcon(): HTMLPhraseElement {
         return DOMHelper.getDocument().createElement("i");
     }
 
 
+    /**
+     * Create a progress html element
+     * 
+     * @return {HTMLProgressElement}
+     */
+    static createProgress(): HTMLProgressElement {
+        return DOMHelper.getDocument().createElement("progress");
+    }
+    
+    
+    /**
+     * Create a list html element
+     * 
+     * @return {HTMLOptionElement}
+     */
+    static createList(): HTMLUListElement {
+        return DOMHelper.getDocument().createElement("ul");
+    }
 }

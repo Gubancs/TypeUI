@@ -65,11 +65,33 @@ class Container extends Component {
      * Destroy container with all children component
      */
     destroy() {
-        this.children.forEach(c => {
-            c.destroy();
+        Log.groupStart("Destroy container: " + this.getId());
+        Log.debug("Destroy children components", this.getChildren().size());
+        this.children.forEach(function(child) {
+
+            console.debug("Destroy child component", child);
+
+            child.destroy();
         });
 
         super.destroy();
-    }
 
+        Log.groupEnd();
+    }
+    
+    /**
+     * Get child component by index
+     * 
+     * @param {number} itemIndex The index of the child component
+     */
+    getComponent(itemIndex: number) {
+        Assert.notNull(itemIndex, "itemIndex");
+
+        if (itemIndex < 0 || itemIndex >= this.getChildren().size()) {
+            Log.error("Item index out of range", itemIndex);
+            return null;
+        }
+
+        return this.getChildren().get(itemIndex);
+    }
 }

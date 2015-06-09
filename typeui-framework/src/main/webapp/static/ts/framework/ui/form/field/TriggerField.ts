@@ -28,9 +28,6 @@ class TriggerField extends TextField {
 
 
     render() {
-
-        Log.debug("this.container", this.getContainer());
-
         this.triggerButton.setClass("ui-trigger-button");
         this.triggerButton.getContainer().setClass("ui-trigger-button-wrapper");
 

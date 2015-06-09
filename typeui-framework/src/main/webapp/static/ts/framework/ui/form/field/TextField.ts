@@ -17,4 +17,8 @@ class TextField extends InputField {
         super.on(TextField.EVENT_KEYUP, listener);
     }
 
+    
+    destroy(){
+        super.destroy();
+    }
 }

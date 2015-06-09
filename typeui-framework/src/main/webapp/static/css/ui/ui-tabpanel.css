@@ -1,0 +1,13 @@
+.ui-container {
+  box-shadow: 0px 3px 0px rgba(201, 219, 219, 0.5);
+}
+.ui-tabpanel .ui-panel {
+  display: none;
+}
+.ui-tabpanel .ui-panel.active {
+  display: inline-block;
+}
+.ui-tabpanel .ui-panel-header {
+  display: none;
+}
+

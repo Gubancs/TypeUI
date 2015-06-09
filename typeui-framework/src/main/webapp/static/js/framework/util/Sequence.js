@@ -4,7 +4,7 @@ var Sequence = (function () {
     }
     Sequence.next = function () {
         var str = "" + Sequence.INSTANCE.counter++;
-        var pad = "ui-";
+        var pad = "cmp-";
         return pad.concat(str);
     };
     Sequence.INSTANCE = new Sequence();

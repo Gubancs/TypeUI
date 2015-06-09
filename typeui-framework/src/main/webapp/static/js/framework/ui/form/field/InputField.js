@@ -88,6 +88,8 @@ var InputField = (function (_super) {
             inputElement.placeholder = this.getPlaceholder();
         if (this.isReadOnly())
             inputElement.readOnly = this.isReadOnly();
+        if (this.getMaxLength())
+            inputElement.maxLength = this.getMaxLength();
         inputElement.autocomplete = this.isAutoCompleteEnabled() ? "on" : "off";
         _super.prototype.doRender.call(this, inputElement);
     };
@@ -118,6 +120,12 @@ var InputField = (function (_super) {
     };
     InputField.prototype.isReadOnly = function () {
         return this.readOnly;
+    };
+    InputField.prototype.getMaxLength = function () {
+        return this.maxLength;
+    };
+    InputField.prototype.setMaxLength = function (maxLength) {
+        this.maxLength = maxLength;
     };
     InputField.EVENT_CHANGE = "change";
     InputField.EVENT_BLUR = "blur";

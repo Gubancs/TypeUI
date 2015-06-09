@@ -8,7 +8,7 @@ var UserLabelProvider = (function () {
     function UserLabelProvider() {
     }
     UserLabelProvider.prototype.getLabel = function (user) {
-        return user.getName();
+        return user.getFirstName();
     };
     return UserLabelProvider;
 })();
@@ -59,10 +59,18 @@ var Application = (function () {
      * @param {Container} bodyContainer
      */
     Application.prototype.onApplicationStart = function (bodyContainer) {
-        var panel = new Panel(bodyContainer);
+        var tabPanel = new TabPanel(bodyContainer);
+        var panel = new Panel(tabPanel);
         panel.setIconClass("fa fa-user");
         panel.setTitle("User registration");
+        var panel2 = new Panel(tabPanel);
+        panel2.setIconClass("fa fa-calendar");
+        panel2.setTitle("Profile");
+        var panel2 = new Panel(tabPanel);
+        panel2.setIconClass("fa fa-group");
+        panel2.setTitle("Roles");
         var userForm = new UserForm(panel.getBody());
+        userForm.setModel(this.getDummyUser());
     };
     /**
      *
@@ -89,6 +97,14 @@ var Application = (function () {
         users.add(new User("7", "Péter"));
         users.add(new User("8", "Jolán"));
         return users;
+    };
+    Application.prototype.getDummyUser = function () {
+        var user = new User("12");
+        user.setFirstName("Gabor");
+        user.setLastName("Kokeny");
+        user.setBirthDate(new Date(Date.now()));
+        user.setEmail("kokeny19@gmail.com");
+        return user;
     };
     return Application;
 })();

@@ -16,6 +16,9 @@ var TextField = (function (_super) {
     TextField.prototype.addKeyupListener = function (listener) {
         _super.prototype.on.call(this, TextField.EVENT_KEYUP, listener);
     };
+    TextField.prototype.destroy = function () {
+        _super.prototype.destroy.call(this);
+    };
     TextField.EVENT_KEYUP = "keyup";
     return TextField;
 })(InputField);

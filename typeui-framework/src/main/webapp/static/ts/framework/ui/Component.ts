@@ -91,17 +91,18 @@ class Component extends Observable {
 
         this.parent = this.useWrapperContainer ? new Container(parent) : parent;
 
-        if (this.parent) {
-            this.parent.add(this);
-        }
-
-
         this.classList = new List<string>();
         this.visible = true;
         this.rendered = false;
         this.disabled = false;
         this.verticalAlign = VerticalAlign.MIDDLE;
         this.id = Sequence.next();
+        
+        if (this.parent) {
+            this.parent.add(this);
+        }
+        
+        ComponentManager.register(this);
     }
 
 
@@ -151,7 +152,7 @@ class Component extends Observable {
                 htmlElement.addEventListener(eventName, listener);
 
             });
-            Log.debug("Initialize listener", eventName, listeners.get(eventName));
+           //Log.debug("Initialize listener", eventName, listeners.get(eventName));
         });
 
     }
@@ -201,6 +202,15 @@ class Component extends Observable {
             this.addClass(cls);
         });
     }
+    
+    /**
+     * Remove CSS class from this component
+     * 
+     * @param {string} className The name of the CSS class that should be removed
+     */
+    removeClass(className:string){
+        this.classList.remove(className);
+    }
 
     getClassList(): List<string> {
         return this.classList;
@@ -227,7 +237,9 @@ class Component extends Observable {
         if (this.useWrapperContainer) {
             this.getContainer().destroy();
         }
-        Log.debug("Destroy component ", this);
+        
+        ComponentManager.unregister(this);
+        //Log.debug("Destroy component ", this);
     }
 
     /**

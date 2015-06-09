@@ -19,6 +19,17 @@ class List<T> {
         this.array.push(t);
     }
 
+    addAll(list: List<T>) {
+        this.concat(list);
+    }
+
+    private concat(list: List<T>) {
+        if (ListUtils.isEmpty(list)) {
+            return;
+        }
+        this.array = this.array.concat(list.array);
+    }
+
     indexOf(t: T): number {
         return this.array.indexOf(t);
     }
@@ -30,7 +41,7 @@ class List<T> {
 
     remove(element: T) {
         var index = this.array.indexOf(element);
-
+        
         if (index > -1) {
             this.removeAt(index);
         }

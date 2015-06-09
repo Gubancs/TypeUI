@@ -4,6 +4,8 @@ declare class List<T> {
     contains(t: T): boolean;
     size(): number;
     add(t: T): void;
+    addAll(list: List<T>): void;
+    private concat(list);
     indexOf(t: T): number;
     get(index: number): T;
     remove(element: T): void;

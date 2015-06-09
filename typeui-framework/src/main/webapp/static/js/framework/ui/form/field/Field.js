@@ -38,6 +38,7 @@ var Field = (function (_super) {
     };
     Field.prototype.destroy = function () {
         this.fieldWrapper.destroy();
+        this.fieldLabel.destroy();
         _super.prototype.destroy.call(this);
     };
     return Field;

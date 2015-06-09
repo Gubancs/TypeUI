@@ -22,6 +22,8 @@ class InputField extends Field {
     private placeholder: string;
 
     private autoCompleteEnabled: boolean;
+    
+    private maxLength:number;
 
     constructor(form: Form, type: InputType, useWrapperContainer?: boolean) {
         super(form, useWrapperContainer);
@@ -100,6 +102,7 @@ class InputField extends Field {
     render() {
         var inputElement = ElementFactory.createInput();
         inputElement.type = InputType[this.getType()].toLowerCase();
+           
         if (this.getName())
             inputElement.name = this.getName();
         if (this.getValue)
@@ -108,7 +111,9 @@ class InputField extends Field {
             inputElement.placeholder = this.getPlaceholder();
         if (this.isReadOnly())
             inputElement.readOnly = this.isReadOnly();
-
+        if(this.getMaxLength())
+            inputElement.maxLength = this.getMaxLength();
+        
         inputElement.autocomplete = this.isAutoCompleteEnabled() ? "on" : "off";
         super.doRender(inputElement);
     }
@@ -119,6 +124,7 @@ class InputField extends Field {
      * @param {EventListener} listener
      */
     addChangeListener(listener: EventListener) {
+        
         super.on(InputField.EVENT_CHANGE, listener);
     }
 
@@ -146,5 +152,13 @@ class InputField extends Field {
 
     isReadOnly(): boolean {
         return this.readOnly;
+    }
+    
+    getMaxLength(): number{
+        return this.maxLength;
+    }
+    
+    setMaxLength(maxLength: number){
+        this.maxLength = maxLength;
     }
 }

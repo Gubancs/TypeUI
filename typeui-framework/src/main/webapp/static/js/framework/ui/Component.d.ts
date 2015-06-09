@@ -88,6 +88,12 @@ declare class Component extends Observable {
      * Set the CSS class
      */
     setClass(className: string): void;
+    /**
+     * Remove CSS class from this component
+     *
+     * @param {string} className The name of the CSS class that should be removed
+     */
+    removeClass(className: string): void;
     getClassList(): List<string>;
     isRendered(): boolean;
     /**

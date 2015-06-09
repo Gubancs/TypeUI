@@ -26,7 +26,7 @@ class Panel extends Container {
     }
 
     protected init() {
-        this.setClass("ui-panel");
+        this.addClass("ui-panel");
 
         //Create header
         this.panelHeader = new Container(this);

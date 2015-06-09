@@ -95,10 +95,26 @@ var ElementFactory = (function () {
     /**
    * Create an icon element
    *
-   * @return {HTML}
+   * @return {HTMLPhraseElement}
    */
     ElementFactory.createIcon = function () {
         return DOMHelper.getDocument().createElement("i");
+    };
+    /**
+     * Create a progress html element
+     *
+     * @return {HTMLProgressElement}
+     */
+    ElementFactory.createProgress = function () {
+        return DOMHelper.getDocument().createElement("progress");
+    };
+    /**
+     * Create a list html element
+     *
+     * @return {HTMLOptionElement}
+     */
+    ElementFactory.createList = function () {
+        return DOMHelper.getDocument().createElement("ul");
     };
     return ElementFactory;
 })();

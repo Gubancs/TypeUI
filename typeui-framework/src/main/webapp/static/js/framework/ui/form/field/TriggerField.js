@@ -24,7 +24,6 @@ var TriggerField = (function (_super) {
         this.triggerButton.addClickListener(this.onTriggerClick);
     }
     TriggerField.prototype.render = function () {
-        Log.debug("this.container", this.getContainer());
         this.triggerButton.setClass("ui-trigger-button");
         this.triggerButton.getContainer().setClass("ui-trigger-button-wrapper");
         _super.prototype.render.call(this);

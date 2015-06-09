@@ -55,10 +55,27 @@ var Container = (function (_super) {
      * Destroy container with all children component
      */
     Container.prototype.destroy = function () {
-        this.children.forEach(function (c) {
-            c.destroy();
+        Log.groupStart("Destroy container: " + this.getId());
+        Log.debug("Destroy children components", this.getChildren().size());
+        this.children.forEach(function (child) {
+            console.debug("Destroy child component", child);
+            child.destroy();
         });
         _super.prototype.destroy.call(this);
+        Log.groupEnd();
+    };
+    /**
+     * Get child component by index
+     *
+     * @param {number} itemIndex The index of the child component
+     */
+    Container.prototype.getComponent = function (itemIndex) {
+        Assert.notNull(itemIndex, "itemIndex");
+        if (itemIndex < 0 || itemIndex >= this.getChildren().size()) {
+            Log.error("Item index out of range", itemIndex);
+            return null;
+        }
+        return this.getChildren().get(itemIndex);
     };
     return Container;
 })(Component);

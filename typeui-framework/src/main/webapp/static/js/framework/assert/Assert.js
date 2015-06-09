@@ -14,13 +14,18 @@ var Assert = (function () {
      * @param {string} name the parameter name
      */
     Assert.notNull = function (param, name) {
-        if (!param) {
+        if (param == null) {
             Log.error("Method parameter " + name + " cannot be null");
         }
     };
-    Assert.isTrue = function (param) {
+    /**
+     * Assert that an object value is true
+     *
+     * @param {T} The object value that should be check
+     */
+    Assert.isTrue = function (param, name) {
         if (!param) {
-            Log.error("Boolean is press");
+            Log.error("Method parameter '" + name + "' is not true");
         }
     };
     return Assert;

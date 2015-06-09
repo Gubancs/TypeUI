@@ -18,6 +18,10 @@ class TextArea extends TextField {
         textAreaHtmlElement.placeholder = this.getPlaceholder();
         textAreaHtmlElement.cols = 50;
         textAreaHtmlElement.rows = 8;
+        
+         if(this.getMaxLength())
+            textAreaHtmlElement.maxLength = this.getMaxLength();
+        
         super.doRender(textAreaHtmlElement);
     }
 

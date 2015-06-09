@@ -28,6 +28,8 @@ class Form extends Container {
 
     private validateOnBlur: boolean;
 
+    private model: any;
+
     constructor(parent: Container) {
         super(parent);
 
@@ -66,7 +68,7 @@ class Form extends Container {
     }
 
     clearValues() {
-        Log.debug("Clear form values", this);
+        //Log.debug("Clear form values", this);
         this.getChildren().forEach(child=> {
             //            if (child instanceof FormField) {
             //                child.setValue(null);
@@ -77,19 +79,34 @@ class Form extends Container {
     getValues(): Object {
         var values = {};
 
-        this.getChildren().forEach(child=> {
+        var inputFields = Form.getInputFields(this);
 
-            //            if (child instanceof FormField) {
-            //                var inputField = child.getInputField();
-            //                values[inputField.getName()] = inputField.getValue();
-            //            }
+        Log.groupStart("-- Collect form values");
 
+        inputFields.forEach(inputField=> {
+            Log.debug("Field value :", inputField.getName(), inputField.getValue());
+            values[inputField.getName()] = inputField.getValue();
+        });
+
+        Log.debug("Collect form values finished", values);
+        Log.groupEnd();
+
+        return values;
+    }
+
+    static getInputFields(container: Container): List<InputField> {
+        var inputFields = new List<InputField>();
+
+        container.getChildren().forEach(child=> {
+            if (child instanceof Container) {
+                inputFields.addAll(Form.getInputFields(child));
+            }
             if (child instanceof InputField) {
-                values[child.getName()] = child.getValue();
+                inputFields.add(child);
             }
         });
 
-        return values;
+        return inputFields;
     }
 
     setLabelWidth(labelWidth: number) {
@@ -154,5 +171,25 @@ class Form extends Container {
     isValidateOnBlur(): boolean {
         return this.validateOnBlur;
     }
+
+
+    setModel<T>(model: T) {
+        this.model = model;
+
+        var proto = Object.getPrototypeOf(model);
+
+        var keys = Object.keys(proto);
+
+        keys.forEach(key => {
+            var propertyDescriptor = Object.getOwnPropertyDescriptor(proto, key);
+
+            var fn = <Function>propertyDescriptor.value;
+
+            //Log.info("Properties ", User.prototype.getFirstName);
+
+            fn.call(model, "alma");
+        });
+    }
+
 }
 

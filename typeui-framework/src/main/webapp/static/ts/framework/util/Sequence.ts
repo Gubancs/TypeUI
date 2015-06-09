@@ -8,7 +8,7 @@ class Sequence {
     static next(): string {
         var str = "" + Sequence.INSTANCE.counter++;
 
-        var pad = "ui-"
+        var pad = "cmp-"
         return pad.concat(str);
     }
 }

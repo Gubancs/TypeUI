@@ -41,4 +41,5 @@ declare class Application {
      */
     getName(): string;
     getDummyUsers(): List<User>;
+    getDummyUser(): User;
 }

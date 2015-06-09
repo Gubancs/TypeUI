@@ -48,7 +48,7 @@ class Field extends Component {
     
     destroy(){
         this.fieldWrapper.destroy();
-        
+        this.fieldLabel.destroy();
         super.destroy();
     }
 }

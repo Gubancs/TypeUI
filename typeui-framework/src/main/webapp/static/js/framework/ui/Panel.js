@@ -19,7 +19,7 @@ var Panel = (function (_super) {
         _super.call(this, parent, false);
     }
     Panel.prototype.init = function () {
-        this.setClass("ui-panel");
+        this.addClass("ui-panel");
         //Create header
         this.panelHeader = new Container(this);
         this.panelHeader.addClass("ui-panel-header");

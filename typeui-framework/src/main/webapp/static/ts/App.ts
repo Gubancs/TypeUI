@@ -2,7 +2,7 @@
 
 class UserLabelProvider implements LabelProvider {
     getLabel(user: User): string {
-        return user.getName();
+        return user.getFirstName();
     }
 }
 
@@ -47,7 +47,7 @@ class Application {
     run() {
         var bodyContainer = new BodyContainer();
         this.onApplicationStart(bodyContainer);
-        
+
         bodyContainer.render();
     }
     
@@ -57,11 +57,22 @@ class Application {
      * @param {Container} bodyContainer
      */
     onApplicationStart(bodyContainer: Container): void {
-        var panel = new Panel(bodyContainer);
+        var tabPanel = new TabPanel(bodyContainer);
+        
+        var panel = new Panel(tabPanel);
         panel.setIconClass("fa fa-user");
         panel.setTitle("User registration");
-
+        
+        var panel2 = new Panel(tabPanel);
+        panel2.setIconClass("fa fa-calendar");
+        panel2.setTitle("Profile");
+        
+        var panel2 = new Panel(tabPanel);
+        panel2.setIconClass("fa fa-group");
+        panel2.setTitle("Roles");
+        
         var userForm = new UserForm(panel.getBody());
+        userForm.setModel(this.getDummyUser());
     }
 
     
@@ -95,6 +106,16 @@ class Application {
         users.add(new User("8", "Jolán"));
 
         return users;
+    }
+
+    getDummyUser(): User {
+        var user = new User("12");
+        user.setFirstName("Gabor");
+        user.setLastName("Kokeny");
+        user.setBirthDate(new Date(Date.now()));
+        user.setEmail("kokeny19@gmail.com");
+
+        return user;
     }
 }
 

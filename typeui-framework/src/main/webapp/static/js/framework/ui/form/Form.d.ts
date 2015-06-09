@@ -15,6 +15,7 @@ declare class Form extends Container {
     private ectype;
     private bottomButtonBar;
     private validateOnBlur;
+    private model;
     constructor(parent: Container);
     protected init(): void;
     protected createComponents(): void;
@@ -22,6 +23,7 @@ declare class Form extends Container {
     render(): void;
     clearValues(): void;
     getValues(): Object;
+    static getInputFields(container: Container): List<InputField>;
     setLabelWidth(labelWidth: number): void;
     getLabelWidth(): number;
     setLabelAlign(labelAlign: LabelAlign): void;
@@ -44,4 +46,5 @@ declare class Form extends Container {
      * @return Return true if validateOnBlur turned on
      */
     isValidateOnBlur(): boolean;
+    setModel<T>(model: T): void;
 }

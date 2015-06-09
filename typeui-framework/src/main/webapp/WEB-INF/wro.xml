@@ -39,6 +39,7 @@
 		<js>/static/js/framework/ui/Icon.js</js>
 		<js>/static/js/framework/ui/DisplayText.js</js>
 		<js>/static/js/framework/ui/Panel.js</js>
+		<js>/static/js/framework/ui/TabPanel.js</js>
 		<js>/static/js/framework/ui/BodyContainer.js</js>
 		<js>/static/js/framework/ui/notification/Notification.js</js>
 

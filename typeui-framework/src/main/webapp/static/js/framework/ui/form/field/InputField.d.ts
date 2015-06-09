@@ -19,6 +19,7 @@ declare class InputField extends Field {
     private readOnly;
     private placeholder;
     private autoCompleteEnabled;
+    private maxLength;
     constructor(form: Form, type: InputType, useWrapperContainer?: boolean);
     /**
      * Set value to this inputField
@@ -56,4 +57,6 @@ declare class InputField extends Field {
     getElement(): HTMLInputElement;
     setReadOnly(readOnly: boolean): void;
     isReadOnly(): boolean;
+    getMaxLength(): number;
+    setMaxLength(maxLength: number): void;
 }

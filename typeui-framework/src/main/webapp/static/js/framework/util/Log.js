@@ -6,29 +6,42 @@ var Log = (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             params[_i - 1] = arguments[_i];
         }
-        console.info(message, params);
+        Log.console.info(message, params);
+        return this;
     };
     Log.error = function (message) {
         var params = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             params[_i - 1] = arguments[_i];
         }
-        console.error(message, params);
+        Log.console.error(message, params);
+        return this;
     };
     Log.warn = function (message) {
         var params = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             params[_i - 1] = arguments[_i];
         }
-        console.warn(message, params);
+        Log.console.warn(message, params);
+        return this;
     };
     Log.debug = function (message) {
         var params = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             params[_i - 1] = arguments[_i];
         }
-        console.debug(message, params);
+        Log.console.debug(message, params);
+        return this;
     };
+    Log.groupStart = function (title) {
+        Log.console.groupCollapsed(title);
+        return this;
+    };
+    Log.groupEnd = function () {
+        console.groupEnd();
+        return this;
+    };
+    Log.console = console;
     return Log;
 })();
 //# sourceMappingURL=Log.js.map
