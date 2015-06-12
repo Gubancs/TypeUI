@@ -1,0 +1,5 @@
+
+
+class BoxComponent extends Component {
+
+}

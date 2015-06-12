@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.topclouders</groupId>
+		<artifactId>typeui</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../typeui/pom.xml</relativePath>
+	</parent>
+	<artifactId>typeui-design</artifactId>
+	<name>typeui-design</name>
+
+
+	<build>
+		<plugins>
+			<!-- Less compiler plugin -->
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<configuration>
+					<encoding>${encoding}</encoding>
+					<sourceDirectory>${basedir}/src/main/resources/less</sourceDirectory>
+					<outputDirectory>${basedir}/gen/sources/css</outputDirectory>
+					<excludes>
+						<exclude>mixins.less</exclude>
+						<exclude>common.less</exclude>
+						<exclude>form/ui-triggerfield.less</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- Wro4J maven plugin -->
+			<plugin>
+				<groupId>ro.isdc.wro4j</groupId>
+				<artifactId>wro4j-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<targetGroups>typeui.min</targetGroups>
+					<contextFolder>${basedir}/gen/sources/css</contextFolder>
+					<destinationFolder>${basedir}/gen/sources/minified</destinationFolder>
+					<cssDestinationFolder>${basedir}/gen/sources/minified/css</cssDestinationFolder>
+					<wroFile>${basedir}/src/main/resources/wro-design.xml</wroFile>
+					<extraConfigFile>${basedir}/src/main/resources/wro-design.properties}</extraConfigFile>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>

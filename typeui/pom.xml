@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.topclouders</groupId>
+	<artifactId>typeui</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>typeui</name>
+	<description>TypeUI is a new generation frontend framework based on HTML5, CSS3 and TypeScript.</description>
+
+
+	<!-- TypUI available dependenices -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.topclouders</groupId>
+				<artifactId>typeui-framework</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.topclouders</groupId>
+				<artifactId>typeui-design</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+
+		<!-- TypeUI available plugins -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven.war.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>ro.isdc.wro4j</groupId>
+					<artifactId>wro4j-maven-plugin</artifactId>
+					<version>${wro4j.maven.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.github.pudovika</groupId>
+					<artifactId>uglifyjs-cleancss-maven-plugin</artifactId>
+					<version>1.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.lesscss</groupId>
+					<artifactId>lesscss-maven-plugin</artifactId>
+					<version>1.7.0.1.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<!-- TypUI project version managment -->
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Plugin versions -->
+		<maven.compiler.plugin.version>3.0</maven.compiler.plugin.version>
+		<maven.war.plugin.version>2.2</maven.war.plugin.version>
+		<wro4j.maven.plugin.version>1.4.5</wro4j.maven.plugin.version>
+	</properties>
+
+
+	<!-- List of submodules -->
+	<modules>
+		<module>../typeui-framework</module>
+		<module>../typeui-design</module>
+		<module>../typeui-showcase</module>
+		<module>../typeui-marketing</module>
+	</modules>
+
+
+	<!-- Organization -->
+	<organization>
+		<name>Touplcouders Hungary Ltd</name>
+		<url>http://topclouders.com/</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>001</id>
+			<name>Gabor Kokeny</name>
+			<email>kokeny19@gmail.com</email>
+			<organization>Topclouders Hungary Ltd</organization>
+			<roles>
+				<role>Product owner</role>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+</project>

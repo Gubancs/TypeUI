@@ -1,0 +1,9 @@
+.ui-menu {
+  display: inline-block;
+}
+.ui-menu-item {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<groups xmlns="http://www.isdc.ro/wro">
+	<group name="typeui.min">
+
+
+		<!-- Utilities -->
+		<js>/util/Comparable.js</js>
+		<js>/util/Integer.js</js>
+		<js>/util/Observable.js</js>
+		<js>/util/ArrayUtils.js</js>
+		<js>/util/ListUtils.js</js>
+		<js>/util/HashMap.js</js>
+		<js>/util/MultiMap.js</js>
+		<js>/util/List.js</js>
+		<js>/util/HashSet.js</js>
+		<js>/util/Log.js</js>
+		<js>/util/DOMHelper.js</js>
+		<js>/util/CssHelper.js</js>
+		<js>/util/ElementFactory.js</js>
+		<js>/util/Sequence.js</js>
+		<js>/util/Device.js</js>
+		
+		<js>/assert/Assert.js</js>
+
+		<!-- Data providers -->
+		<js>/data/DataProvider.js</js>
+		<js>/data/EnumDataProvider.js</js>
+		<js>/data/ListDataProvider.js</js>
+
+		<!-- State -->
+		<js>/state/StateProvider.js</js>
+		<js>/state/LocalStorageStateProvider.js</js>
+		<js>/state/StateManager.js</js>
+
+		<!-- UI elements -->
+		<js>/ui/Component.js</js>
+		<js>/ui/ComponentManager.js</js>
+		<js>/ui/Container.js</js>
+		<js>/ui/Icon.js</js>
+		<js>/ui/DisplayText.js</js>
+
+		<!-- Menu -->
+		<js>/ui/menu/MenuItem.js</js>
+		<js>/ui/menu/Menu.js</js>
+
+		<js>/ui/Panel.js</js>
+		<js>/ui/TabPanel.js</js>
+		<js>/ui/BodyContainer.js</js>
+		<js>/ui/notification/Notification.js</js>
+
+		<!-- Grid -->
+		<js>/ui/grid/ColumnModel.js</js>
+		<js>/ui/grid/Grid.js</js>
+
+		<!-- Form elements -->
+		<js>/ui/form/Form.js</js>
+		<js>/ui/form/field/Field.js</js>
+		<js>/ui/form/field/InputField.js</js>
+		<js>/ui/form/field/TextField.js</js>
+		<js>/ui/form/field/EmailField.js</js>
+		<js>/ui/form/field/Checkbox.js</js>
+		<js>/ui/form/field/RadioButton.js</js>
+		<js>/ui/form/field/TextArea.js</js>
+		<js>/ui/form/field/TriggerField.js</js>
+		<js>/ui/form/field/Combobox.js</js>
+		<js>/ui/form/field/DateField.js</js>
+		<js>/ui/form/FormToolkit.js</js>
+		<js>/ui/form/Label.js</js>
+		<js>/ui/form/ButtonBar.js</js>
+		<js>/ui/form/Button.js</js>
+
+
+		<!-- Cache -->
+		<js>/cache/Cache.js</js>
+		<js>/cache/CacheManager.js</js>
+	</group>
+</groups>
