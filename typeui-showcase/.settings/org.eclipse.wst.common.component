@@ -4,12 +4,6 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/gen/sources/javascript"/>
-        <dependent-module archiveName="typeui-design-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/typeui-design/typeui-design">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="typeui-framework-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/typeui-framework/typeui-framework">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="typeui-showcase"/>
         <property name="java-output-path" value="/typeui-showcase/target/classes"/>
     </wb-module>

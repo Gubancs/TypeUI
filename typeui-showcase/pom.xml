@@ -27,14 +27,4 @@
 
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>org.topclouders</groupId>
-			<artifactId>typeui-design</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.topclouders</groupId>
-			<artifactId>typeui-framework</artifactId>
-		</dependency>
-	</dependencies>
 </project>
