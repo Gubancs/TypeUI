@@ -96,6 +96,7 @@
 
 	<!-- List of submodules -->
 	<modules>
+		<module>../typeui-resource-plugin</module>
 		<module>../typeui-framework</module>
 		<module>../typeui-design</module>
 		<module>../typeui-showcase</module>

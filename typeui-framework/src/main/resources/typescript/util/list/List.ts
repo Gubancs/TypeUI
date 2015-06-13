@@ -15,6 +15,10 @@ class List<T> {
         return this.items.indexOf(t) > -1;
     }
 
+    /**
+    * Gets the length of the array. 
+    * This is a number one higher than the highest element defined in an array.
+    */
     size(): number {
         return this.items.length;
     }
@@ -31,11 +35,25 @@ class List<T> {
     }
 
 
-    indexOf(t: T): number {
-        return this.items.indexOf(t);
+    /**
+    * Returns the index of the first occurrence of a value in an List.
+    * @param searchElement The value to locate in the array.
+    * @param fromIndex The List index at which to begin the search.
+    * If fromIndex is omitted, the search starts at index 0.
+    */
+    indexOf(t: T, fromIndex?: number): number {
+        return this.items.indexOf(t, fromIndex);
     }
 
     get(index: number): T {
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        if (index < 0 || index >= this.size()) {
+            Log.error("Index out of bounds exception", index);
+        }
+
         return this.items[index];
     }
 
@@ -105,15 +123,31 @@ class List<T> {
         return this.size() == 0;
     }
 
+    /**
+    * Adds all the elements of a list separated by the specified separator string.
+    * @param separator A string used to separate one element of a list from the next in the resulting String. 
+    * If omitted, the list elements are separated with a comma.
+    */
     join(separator?: string) {
         return this.items.join(separator);
     }
+    
     /**
-       * Sorts an list.
+       * Sorts a list.
        * @param compareFn The name of the function used to determine 
        * the order of the elements. 
        */
     sort(compareFn?: (a: T, b: T) => number) {
         this.items.sort(compareFn);
+    }
+
+    /**
+     * Get all items in an array.
+     * 
+     * @return {Array} Return the copied array
+     */
+    toArray(): T[] {
+        var copy = new Array<T>();
+        return copy.concat(this.items);
     }
 }

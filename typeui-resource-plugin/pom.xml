@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>typeui-resource-plugin</artifactId>
+	<name>typeui-resource-plugin</name>
+	<packaging>maven-plugin</packaging>
+	<description>TypeUI resource plugin is a maven plugin that allows you to manage generated resource files.</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.m2e</groupId>
+                <artifactId>lifecycle-mapping</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <lifecycleMappingMetadata>
+                        <pluginExecutions>
+                            <pluginExecution>
+                                <pluginExecutionFilter>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-plugin-plugin</artifactId>
+                                    <versionRange>[3.2,)</versionRange>
+                                    <goals>
+                                        <goal>descriptor</goal>
+                                    </goals>
+                                </pluginExecutionFilter>
+                                <action>
+                                    <ignore />
+                                </action>
+                            </pluginExecution>
+                        </pluginExecutions>
+                    </lifecycleMappingMetadata>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </pluginManagement>
+</build>
+	<parent>
+		<groupId>org.topclouders</groupId>
+		<artifactId>typeui</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../typeui/pom.xml</relativePath>
+	</parent>
+</project>

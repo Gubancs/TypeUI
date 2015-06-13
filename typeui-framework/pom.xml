@@ -6,27 +6,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>ro.isdc.wro4j</groupId>
-				<artifactId>wro4j-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>compile</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<targetGroups>typeui.min</targetGroups>
-					<contextFolder>${basedir}/gen/sources/javascript</contextFolder>
-					<destinationFolder>${basedir}/gen/sources/minified</destinationFolder>
-					<jsDestinationFolder>${basedir}/gen/sources/minified/js</jsDestinationFolder>
-					<wroFile>${basedir}/src/main/resources/wro.xml</wroFile>
-					<extraConfigFile>${basedir}/src/main/resources/wro.properties}</extraConfigFile>
-				</configuration>
-			</plugin>
-
 
 			<plugin>
 				<groupId>com.github.pudovika</groupId>
@@ -39,24 +18,34 @@
 							<goal>uglify</goal>
 						</goals>
 						<configuration>
-							<skip>true</skip>
+							<skip>false</skip>
 							<encoding>${project.build.sourceEncoding}</encoding>
 							<sources>
-								<directory>${basedir}/gen/sources/minified/js</directory>
+								<directory>${basedir}/gen/sources/javascript</directory>
 								<includes>
-									<include>*.min.js</include>
+									<include>typeui-all.js</include>
 								</includes>
 							</sources>
 							<uglifyjsCmd>uglifyjs</uglifyjsCmd>
 							<optionsJs>--mangle --compress drop_console,dead_code,comparisons,loops,unused,join_vars,keep_fargs,booleans,properties,sequences --stats</optionsJs>
-							<outputDirectory>${basedir}/gen/sources/minified/production</outputDirectory>
+							<outputDirectory>${basedir}/gen/sources/minified</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 
+
 		</plugins>
+
 	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>typescript-maven-plugin</id>
+			<url>https://raw.github.com/ppedregal/typescript-maven-plugin/master/repo</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 
 	<parent>
 		<groupId>org.topclouders</groupId>
@@ -64,4 +53,5 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../typeui/pom.xml</relativePath>
 	</parent>
+
 </project>

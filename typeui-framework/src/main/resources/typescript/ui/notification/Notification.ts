@@ -4,7 +4,7 @@ enum NotificationType {
 }
 
 /**
- * Inline notification for error, warning and info messages
+ * Inline notification for showing the error, warning and info messages
  * 
  * @author Gabor Kokeny
  */

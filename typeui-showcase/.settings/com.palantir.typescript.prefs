@@ -1,5 +1,5 @@
-build.path.exportedFolder=src/main/resources/exported
+build.path.exportedFolder=gen/sources/javascript/exported
 build.path.sourceFolder=src/main/resources/typescript
 compiler.outputDirOption=gen/sources/javascript
-compiler.outputFileOption=typeui-all.js
+compiler.outputFileOption=typeui-showcase-all.js
 eclipse.preferences.version=1
